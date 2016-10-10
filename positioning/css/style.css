@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  height: 2000px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Social block */
+.social-block {
+  position: relative;
+  width: 206px;
+  top: 6px;
+  left: 5px;
+  z-index: 4;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid rgb(53, 147, 201);
+}
+
+.social-icons > a {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-image: url(../img/social.png);
+}
+
+.twitter {
+  top: 12px;
+  left: 17px;
+  background-position: 0px 32px;
+}
+
+.facebook {
+  bottom: 7px;
+  left: 138px;
+  background-position: 32px 0px;
+}
+
+.pinterest {
+  bottom: -7px;
+  left: 99px;
+  background-position: 32px 32px;
+}
+
+.thumblr {
+  bottom: 35px;
+  left: 171px;
+  background-position: 0px 0px;
+}
+
+/* Central block */
+.central-block {
+  position: relative;
+  margin: 0 auto;
+  top : -41px;
+  width : 460px;
+}
+
+.central-block > div {
+  position: absolute;
+  margin: 0 auto;
+  height: 607px;
+  width : 460px;
+}
+
+.top-layer { 
+  background-color: rgb(216, 70, 76);
+  z-index: 2;
+}
+
+.middle-layer {
+  background-color: rgb(54, 79, 134); 
+  z-index: 1;
+  top : 5px;
+  left: 5px;
+}
+
+.bottom-layer {
+  background-color: rgb(0, 137, 178); 
+  z-index: 0; 
+  top : 10px;
+  left: 10px;
+}
+
+/* Contact us block */
+.contact-us {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 330px;
+  height: 131px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.contact-icon {
+  margin: 24px 15px 0 22px;
+  float: left;
+  width: 86px;
+  height: 86px;
+  background-color: rgb(247, 227, 95);
+}
+
+.contact-data {
+  margin: 25px 0px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+}
+
+.title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.contact-data a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.contact-data a:hover {
+  text-decoration: underline;
+}
