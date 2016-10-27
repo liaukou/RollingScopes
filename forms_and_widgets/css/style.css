@@ -544,6 +544,22 @@ a {
 
 .weather .slider {
     position: relative;
+    height: 248px;
+}
+
+.weather .slide {
+    transition: opacity 0.2s linear;
+}
+
+.weather .slide img {
+    width: 307px;
+    height: 248px;
+}
+
+.weather .slide:not(.active) {
+    position: absolute;
+    top: 0;
+    opacity: 0;
 }
 
 .weather .controls {
