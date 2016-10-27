@@ -1,0 +1,1335 @@
+@font-face {
+    font-family: GothamRoundedMedium;
+
+    src: url(../fonts/GothamRounded-Medium.otf);
+}
+
+@font-face {
+    font-family: GothamRoundedBook;
+
+    src: url(../fonts/GothamRounded-Book.otf);
+}
+
+@font-face {
+    font-family: GothamRoundedBold;
+
+    src: url(../fonts/GothamRounded-Bold.otf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: GothamRoundedBook, sans-serif;
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear-fix::after {
+    content: "";
+
+    display: block;
+    clear: both;
+}
+
+.widget {
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* Music player block */
+.music {
+    width: 728px;
+    padding: 7px 14px 14px 8px;
+
+    font-size: 0;
+}
+
+.music .left {
+    float: left;
+    width: 126px;
+}
+
+.music .right {
+    float: right;
+    width: 550px;
+}
+
+.music .left img {
+    width: 126px;
+    height: 126px;
+}
+
+.music .left a {
+    position: relative;
+
+    display: block;
+    margin-top: 12px;
+    padding: 13px 17px;
+
+    font-size: 1.358rem;
+    line-height: 14px;
+    font-family: GothamRoundedBold, sans-serif;
+    text-align: right;
+    color: #ffffff;
+    text-transform: uppercase;
+
+    background-color: #526e82;
+}
+
+.music .left a::before,
+.music .left a::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 17px;
+
+    display: block;
+    width: 15px;
+    height: 15px;
+
+    background-image: url(../img/music-sprite.png);
+    background-position: 0 0;
+
+    transition: opacity 0.2s linear;
+}
+
+.music .left a::after {
+    background-position-y: -24px;
+    opacity: 0;
+}
+
+.music .left a:hover::after {
+    opacity: 1;
+}
+
+.music .right h2,
+.music .right h3 {
+    margin: 13px 0 6px;
+
+    font-weight: normal;
+    font-size: 2.264rem;
+}
+
+.music .right h2 {
+    margin-top: 13px;
+
+    color: #a8a8a8;
+}
+
+.music .right h3 {
+    margin-top: 10px;
+
+    color: #d6d6d6;
+}
+
+.music .progress-bar {
+    position: relative;
+
+    width: 488px;
+    height: 9px;
+    margin-top: 16px;
+
+    cursor: pointer;
+}
+
+.music .progress-bar .back,
+.music .progress-bar .loading,
+.music .progress-bar .progress {
+    position: absolute;
+    top: 0;
+
+    height: 9px;
+
+    border-radius: 10px;
+}
+
+.music .progress-bar .back {
+    width: 100%;
+
+    background-color: #efefef;
+}
+
+.music .progress-bar .loading {
+    background-color: #bbfdf1;
+}
+
+.music .progress-bar .progress {
+    background-color: #4cd9c0;
+}
+
+.music .progress-bar .time-left {
+    position: absolute;
+    top: -5px;
+    right: -63px;
+
+    font-size: 1.585rem;
+    color: #c6c6c6;
+
+    cursor: text;
+}
+
+.music .controls {
+    margin-top: 32px;
+    margin-left: -4px;
+}
+
+.music .controls a {
+    position: relative;
+
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.music .controls a:not(.play) {
+    width: 30px;
+    height: 30px;
+}
+
+.music .controls .play {
+    width: 45px;
+    height: 45px;
+
+    background-color: #4cd9c0;
+    border-radius: 50%;
+}
+
+.music .controls a::before,
+.music .controls a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+
+    background-image: url(../img/music-sprite.png);
+    transform: translate3d(-50%,-50%,0);
+
+    transition: opacity 0.2s ease-out;
+}
+
+.music .controls .play::before,
+.music .controls .play::after {
+    left: 24px;
+
+    width: 15px;
+    height: 17px;
+
+    background-position-x: -14px;
+}
+
+.music .controls .play.on::before,
+.music .controls .play.on::after {
+    left: 22px;
+
+    width: 12px;
+    height: 17px;
+
+    background-position-x: -190px;
+}
+
+.music .controls .back::before,
+.music .controls .back::after {
+    width: 24px;
+    height: 19px;
+
+    background-position-x: -28px;
+}
+
+.music .controls .forward::before,
+.music .controls .forward::after {
+    width: 24px;
+    height: 19px;
+
+    background-position-x: -51px;
+}
+
+.music .controls .back {
+    margin: 0 23px 0 45px;
+}
+
+.music .controls .shuffle::before,
+.music .controls .shuffle::after {
+    width: 24px;
+    height: 20px;
+
+    background-position-x: -74px;
+}
+
+.music .controls .shuffle {
+    margin: 0 45px 0 35px;
+}
+
+.music .controls .repeat::before,
+.music .controls .repeat::after {
+    width: 26px;
+    height: 19px;
+
+    background-position-x: -97px;
+}
+
+.music .controls .like::before,
+.music .controls .like::after {
+    width: 23px;
+    height: 20px;
+
+    background-position-x: -122px;
+}
+
+.music .controls .like {
+    margin: 0 49px 0 50px;
+}
+
+.music .controls .add::before,
+.music .controls .add::after {
+    width: 25px;
+    height: 25px;
+
+    background-position-x: -144px;
+}
+
+.music .controls .share::before,
+.music .controls .share::after {
+    width: 23px;
+    height: 20px;
+
+    background-position-x: -168px;
+}
+
+.music .controls .share {
+    margin-left: 50px;
+}
+
+.music .controls a:not(.play).on::before,
+.music .controls a::after {
+    background-position-y: -24px;
+}
+
+.music .controls a::after {
+    opacity: 0;
+}
+
+.music .controls a:not(.on):hover::after,
+.music .controls .play.on:hover::after {
+    opacity: 1;
+}
+/* Music player block end */
+
+
+/* Mail block */
+.mail {
+    width: 307px;
+}
+
+.mail header {
+    font-size: 0;
+
+    background-color: #4cd9c0;
+}
+
+.mail .wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.mail .menu,
+.mail .add {
+    position: relative;
+
+    width: 75px;
+    height: 64px;
+}
+
+.mail .menu {
+    float: left;
+
+    background-color: #41c0a9;
+}
+
+.mail .add {
+    float: right;
+
+    background-color: #4cd9c0;
+}
+
+.mail .menu::after,
+.mail .add::after,
+.mail .menu::before,
+.mail .add::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    background-image: url(../img/sprite.png);
+
+    transition: opacity 0.2s linear;
+}
+
+.mail .add::after,
+.mail .add::before {
+    width: 27px;
+    height: 27px;
+    margin: 18px 0 0 34px;
+
+    background-position: 0 0;
+}
+
+.mail .menu::after,
+.mail .menu::before {
+    width: 36px;
+    height: 26px;
+    margin: 16px 0 0 17px;
+
+    background-position: -27px 0;
+}
+
+.mail .add::after,
+.mail .menu::after {
+    background-position-y: -27px;
+    opacity: 0;
+}
+
+.mail .add:hover::after,
+.mail .menu:hover::after {
+    opacity: 1;
+}
+
+.mail .chat {
+    position: relative;
+
+    display: block;
+
+    font-size: 0;
+
+    transition: background-color 0.1s linear;
+}
+
+.mail .chat:not(:last-child) {
+    font-size: 0;
+
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.mail .chat:hover {
+    background-color: #f7f7f7;
+}
+
+.mail .chat img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    overflow: hidden;
+
+    vertical-align: middle;
+
+    border-radius: 50%;
+}
+
+.mail .content {
+    display: inline-block;
+    width: 200px;
+    margin: 5px 0;
+
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+.mail .name {
+    font-size: 1.811rem;
+    line-height: 19px;
+    font-family: GothamRoundedMedium, sans-serif;
+    color: #bac2c7;
+}
+
+.mail .msg-status {
+    margin: 7px 0;
+    overflow: hidden;
+
+    font-size: 1.358rem;
+    color: #c8d2d9;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mail .msg-status::before {
+    display: inline-block;
+
+    background-image: url(../img/sprite.png);
+    background-position: -63px 0;
+}
+
+.mail .send::before {
+    content: "";
+
+    width: 14px;
+    height: 9px;
+    margin-right: 5px;
+}
+
+.mail .send::after {
+    content: "Send";
+}
+
+.mail .typing::after {
+    content: "Typing...";
+
+    font-style: italic;
+}
+
+.mail .error::before {
+    content: "";
+
+    width: 9px;
+    height: 9px;
+    margin-right: 10px;
+
+    background-position-y: -9px;
+}
+
+.mail .error::after {
+    content: "Not delivered";
+}
+
+.mail .chat::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+
+    border-radius: 50%;
+}
+
+.mail .online::after {
+    background-color: #4cd9c0;
+}
+
+.mail .do-not-disturb::after {
+    background-color: #ec747d;
+}
+
+.mail .away::after {
+    background-color: #56e5f6;
+}
+/* Mail block end */
+
+
+/* Weather block */
+.weather {
+    width: 307px;
+
+    font-size: 0;
+}
+
+.weather .slider {
+    position: relative;
+}
+
+.weather .controls {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+}
+
+.weather .controls li {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 8px;
+
+    background-color: #05aeb3;
+    border-radius: 50%;
+
+    transition: background-color 0.2s linear;
+}
+
+.weather .controls .active {
+    background-color: #076164;
+}
+
+.weather .controls a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin-top: -4px;
+    margin-left: -4px;
+}
+
+.weather .controls li:not(.active):hover {
+    background-color: #ffffff;
+}
+
+.weather .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+}
+
+.weather .caption span {
+    display: block;
+    margin-top: 2px;
+
+    font-size: 1.675rem;
+    color: #ffffff;
+}
+
+.weather .caption .temp {
+    position: relative;
+
+    font-size: 5rem;
+    line-height: 40px;
+}
+
+.weather .caption .temp::after {
+    content: "\00b0";
+    position: absolute;
+    top: -10px;
+
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.weather footer a {
+    display: inline-block;
+    width: 79px;
+    padding: 11px 0;
+
+    font-size: 4.075rem;
+    line-height: 42px;
+    vertical-align: top;
+    text-align: center;
+    color: #dedede;
+
+    transition: color 0.2s linear;
+}
+
+.weather footer a:not(.active):hover {
+    color: #4cd9c0;
+}
+
+
+.weather footer .active {
+    color: #ffffff;
+
+    background-color: #ff8989;
+}
+
+.weather footer .add,
+.weather footer .list {
+    position: relative;
+
+    width: 74px;
+    height: 64px;
+}
+
+.weather footer .list::after,
+.weather footer .add::after,
+.weather footer .list::before,
+.weather footer .add::before {
+    content: "";
+    position: absolute;
+
+    display: block;
+
+    background-image: url(../img/sprite.png);
+    background-position: 0 -54px;
+
+    transition: opacity 0.2s linear;
+}
+
+.weather footer .add::after,
+.weather footer .add::before {
+    top: 17px;
+    left: 27px;
+
+    width: 27px;
+    height: 27px;
+}
+
+.weather footer .list::after,
+.weather footer .list::before {
+    top: 18px;
+    left: 18px;
+
+    width: 43px;
+    height: 27px;
+
+    background-position-x: -27px;
+}
+
+.weather footer .add::after,
+.weather footer .list::after {
+    background-position-y: -81px;
+    opacity: 0;
+}
+
+.weather footer .add:hover::after,
+.weather footer .list:hover::after {
+    opacity: 1;
+}
+/* Weather block end */
+
+
+/* Login block */
+.login {
+    position: relative;
+
+    width: 307px;
+
+    font-size: 0;
+}
+
+.login hr {
+    height: 1px;
+    margin: 0;
+
+    background-color: #e2e2e2;
+    border: none;
+}
+
+.login input:not([type="submit"]) {
+    display: block;
+    width: 100%;
+    padding: 26px 26px 26px 66px;
+
+    font-size: 2.038rem;
+    line-height: 21px;
+    font-family: GothamRoundedBook, sans-serif;
+    color: #8b8b8b;
+
+    border: none;
+    border-left: 4px solid transparent;
+
+    transition: border-color 0.2s linear;
+}
+
+.login input:not([type="submit"])::-webkit-input-placeholder {
+    color: #bebebe;
+}
+.login input:not([type="submit"])::-moz-placeholder {
+    color: #bebebe;
+}
+.login input:not([type="submit"]):-ms-input-placeholder {
+    color: #bebebe;
+}
+
+.login input:focus {
+    border-left: 4px solid #ff8989;
+    outline: 0;
+}
+
+.login label {
+    position: absolute;
+
+    display: block;
+
+    background-image: url(../img/sprite.png);
+    background-position: -77px 0;
+}
+
+.login .email {
+    top: 26px;
+    left: 25px;
+
+    width: 21px;
+    height: 22px;
+}
+
+.login .pass {
+    top: 95px;
+    left: 27px;
+
+    width: 18px;
+    height: 24px;
+
+    background-position-y: -22px;
+}
+
+.login footer {
+    margin-top: -2px;
+
+    background-color: #7191a8;
+}
+
+.login input[type="submit"],
+.login a {
+    display: inline-block;
+    width: 50%;
+    padding: 22px;
+
+    font-size: 1.811rem;
+    line-height: 22px;
+    font-family: GothamRoundedBold, sans-serif;
+    vertical-align: top;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: color 0.2s linear;
+}
+
+.login input[type="submit"] {
+    color: #7191a8;
+
+    background-color: #526e82;
+    border: none;
+    cursor: pointer;
+}
+
+.login a {
+    color: #526e82;
+
+    background-color: transparent;
+}
+
+.login input[type="submit"]:hover,
+.login a:hover {
+    color: #ffffff;
+}
+/* Login block end */
+
+
+/* Calendar block */
+.calendar {
+    width: 307px;
+}
+
+.calendar header {
+    font-size: 0;
+    color: #ffffff;
+
+    background-color: #526e82;
+}
+
+.calendar header > * {
+    display: inline-block;
+
+    vertical-align: top;
+}
+
+.calendar header > div {
+    width: 223px;
+    margin-top: 14px;
+
+    text-align: center;
+}
+
+.calendar .year {
+    font-size: 1.721rem;
+    line-height: 18px;
+}
+
+.calendar .month {
+    margin-top: 10px;
+
+    font-size: 1.811rem;
+    line-height: 19px;
+    font-family: GothamRoundedMedium, sans-serif;
+}
+
+.calendar header a {
+    position: relative;
+
+    width: 40px;
+    height: 85px;
+}
+
+.calendar header .forward {
+    width: 44px;
+}
+
+.calendar header a::before,
+.calendar header a::after {
+    content: "";
+    position: absolute;
+    top: 29px;
+    left: 14px;
+
+    display: block;
+    width: 12px;
+    height: 23px;
+
+    background-image: url(../img/sprite.png);
+    background-position: 0 -108px;
+
+    transition: opacity 0.2s linear;
+}
+
+.calendar header a::after {
+    background-position-x: -24px;
+    opacity: 0;
+}
+
+.calendar .forward::before {
+    background-position-x: -12px;
+}
+
+.calendar .forward::after {
+    background-position-x: -36px;
+}
+
+.calendar header a:hover::after {
+    opacity: 1;
+}
+
+.calendar table {
+    border-spacing: 0;
+    font-size: 1.721rem;
+}
+
+.calendar thead {
+    color: #3dad99;
+
+    background-color: #4cd9c0;
+}
+
+.calendar thead th {
+    line-height: 54px;
+}
+
+.calendar thead th:last-child {
+    width: 49px;
+    padding-right: 8px;
+}
+
+.calendar tbody {
+    color: #9d9d9d;
+}
+
+.calendar tbody tr:first-child {
+    height: 52px;
+
+    vertical-align: bottom;
+}
+
+.calendar tbody tr:last-child {
+    height: 47px;
+
+    vertical-align: top;
+}
+
+.calendar table a {
+    display: block;
+    width: 31px;
+    margin: 6px 5px;
+
+    line-height: 31px;
+    text-align: center;
+    color: inherit;
+
+    border-radius: 50%;
+
+    transition: color 0.2s linear, background-color 0.2s linear;
+}
+
+.calendar table a:hover {
+    color: #ffffff;
+
+    background-color: #4cd9c0;
+}
+
+.calendar table .active {
+    color: #ffffff;
+
+    background-color: #ff8989;
+}
+/* Calendar block end */
+
+
+/* Converter block */
+.converter {
+    width: 307px;
+}
+
+.converter .row {
+    display: block;
+    padding: 30px 0 33px 30px;
+}
+
+.converter .row:not(:last-of-type) {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.converter label,
+.converter input {
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.converter label {
+    padding-right: 29px;
+
+    font-size: 1.811rem;
+    font-family: GothamRoundedMedium, sans-serif;
+    color: #b2b2b2;
+}
+
+.converter input {
+    width: 185px;
+    padding: 2px 0;
+
+    font-size: 4.075rem;
+    font-family: GothamRoundedBook, sans-serif;
+    text-align: right;
+    color: #b2b2b2;
+
+    border: none;
+    border-left: 1px solid #d7d7d7;
+}
+
+.converter input::-webkit-input-placeholder {
+    color: #dcdbdb;
+}
+.converter input::-moz-placeholder {
+    color: #dcdbdb;
+}
+.converter input:-ms-input-placeholder {
+    color: #dcdbdb;
+}
+
+.converter footer {
+    background-color: #526e82;
+}
+
+.converter footer a {
+    position: relative;
+
+    display: block;
+    float: right;
+    width: 73px;
+    height: 64px;
+}
+
+.converter .convert {
+    float: left;
+    width: 102px;
+
+    background-color: #ff8989;
+}
+
+.converter a::before,
+.converter a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: block;
+    width: 33px;
+    height: 12px;
+
+    background-image: url(../img/sprite.png);
+    background-position: 0 -131px;
+    transform: translate3d(-50%,-50%,0);
+
+    transition: opacity 0.2s linear;
+}
+
+.converter .num-pad::before,
+.converter .num-pad::after {
+    width: 31px;
+    height: 30px;
+
+    background-position-x: -33px;
+}
+
+.converter .add::before,
+.converter .add::after {
+    width: 27px;
+    height: 27px;
+
+    background-position-x: -64px;
+}
+
+.converter footer a::after {
+    background-position-y: -161px;
+    opacity: 0;
+}
+
+.converter footer a:hover::after {
+    opacity: 1;
+}
+.converter footer a:hover::before {
+    opacity: 0;
+}
+/* Converter block end */
+
+
+/* Buttons block */
+.buttons {
+    width: 305px;
+    padding: 14px 10px 11px 12px;
+}
+
+.buttons .left {
+    float: left;
+    width: 216px;
+}
+
+.buttons .right {
+    float: right;
+    width: 51px;
+}
+
+.buttons .left > :first-child {
+    /*margin-bottom: 31px;*/
+}
+
+.buttons input[type="text"] {
+    width: 216px;
+    padding: 13px 11px;
+
+    font-size: 2.038rem;
+    line-height: 21px;
+    letter-spacing: 1.5px;
+
+    border: 2px solid #dddddd;
+    border-radius: 12px;
+}
+
+.buttons input[type="text"].valid {
+    color: #4cd9c0;
+
+    border-color: #4cd9c0;
+}
+
+.buttons input[type="text"].valid::-webkit-input-placeholder {
+    color: #4cd9c0;
+}
+
+.buttons input[type="text"].invalid {
+    color: #ff8989;
+
+    border-color: #ff8989;
+}
+
+.buttons input[type="text"].invalid::-webkit-input-placeholder {
+    color: #ff8989;
+}
+
+.buttons input[type="range"] {
+    width: 213px;
+    height: 70px;
+    margin: 2px 0 0 2px;
+
+    background: transparent;
+
+    -webkit-appearance: none;
+    overflow: hidden;
+}
+
+.buttons input[type="range"]::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+    margin-top: -5px;
+
+    background-color: #526e82;
+    border-radius: 50%;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+}
+
+.buttons input[type="range"]::-moz-range-thumb {
+    width: 19px;
+    height: 19px;
+
+    background-color: #526e82;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttons input[type="range"]::-ms-thumb {
+    width: 19px;
+    height: 19px;
+
+    background-color: #526e82;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttons input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+
+    background: #99b5c9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons input[type="range"]::-moz-range-progress {
+    height: 8px;
+
+    background-color: #526e82;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons input[type="range"]::-moz-range-track {
+    height: 8px;
+
+    background: #99b5c9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8px;
+
+    color: transparent;
+
+    background: transparent;
+    border-width: 6px 0;
+    border-color: transparent;
+    cursor: pointer;
+}
+.buttons input[type="range"]::-ms-fill-lower {
+    background: #526e82;
+    border-radius: 5px;
+}
+.buttons input[type="range"]::-ms-fill-upper {
+    background: #99b5c9;
+    border-radius: 5px;
+}
+
+.buttons input[type="checkbox"],
+.buttons input[type="radio"]  {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+}
+
+.buttons input[type="checkbox"] + label,
+.buttons input[type="radio"] + label {
+    position: relative;
+
+    display: inline-block;
+    min-height: 51px;
+    padding-left: 51px;
+
+    vertical-align: top;
+}
+
+
+.buttons input[type="checkbox"]:focus + label::before,
+.buttons input[type="radio"]:focus + label::before {
+    box-shadow: 0 0 5px 1px rgb(77, 144, 254);
+}
+
+.buttons input[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+
+    width: 47px;
+    height: 47px;
+    margin-left: -51px;
+
+    border: 2px solid #ff8989;
+    border-radius: 12px;
+}
+
+.buttons input[type="checkbox"] + label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 17px;
+    left: 13px;
+
+    width: 28px;
+    height: 18px;
+
+    background-image: url(../img/sprite.png);
+    background-position: -70px -46px;
+    opacity: 0;
+
+    transition: opacity 0.2s linear;
+}
+
+.buttons input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+}
+
+.buttons input[type="radio"] {
+}
+
+.buttons input[type="radio"] + label {
+    margin-top: 16px;
+}
+
+.buttons input[type="radio"] + label {
+    min-height: 42px;
+    padding-left: 47px;
+}
+
+.buttons input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    margin-left: -42px;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border: 2px solid #dddddd;
+    border-radius: 50%;
+    transition: border-color .2s linear;
+}
+
+.buttons input[type="radio"] + label::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 12px;
+
+    width: 28px;
+    height: 28px;
+
+    background-color: #dddddd;
+    border-radius: 50%;
+
+    transition: background-color 0.2s linear;
+}
+
+.buttons input[type="radio"]:checked + label::before {
+    border-color: #4cd9c0;
+}
+
+.buttons input[type="radio"]:checked + label::after {
+    background-color: #4cd9c0;
+}
+/* Buttons block end */
+
+
+
+
+  /*box-shadow: -8px 0 #526e82, -16px 0 #526e82, -24px 0 #526e82, -32px 0 #526e82, -40px 0 #526e82, -48px 0 #526e82, -56px 0 #526e82, -64px 0 #526e82, -72px 0 #526e82, -80px 0 #526e82, -88px 0 #526e82, -96px 0 #526e82, -104px 0 #526e82, -112px 0 #526e82, -120px 0 #526e82, -128px 0 #526e82, -136px 0 #526e82, -144px 0 #526e82, -152px 0 #526e82, -160px 0 #526e82, -168px 0 #526e82, -176px 0 #526e82, -184px 0 #526e82, -192px 0 #526e82, -200px 0 #526e82, -208px 0 #526e82, -216px 0 #526e82;*/
