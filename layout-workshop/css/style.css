@@ -1,0 +1,773 @@
+/* general styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+h1,
+h2 {
+    font-family: "Fjalla One", sans-serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.5;
+}
+
+h2 {
+    margin: 0 0 20px;
+
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+ul {
+    padding: 0;
+
+    font-size: 0;
+}
+
+p {
+    font-size: 14px;
+    line-height: 24px;
+    color: rgb(118, 124, 126);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    transition: color 0.2s linear;
+}
+
+input,
+button,
+textarea {
+    padding: 12px 16px;
+
+    border-style: none;
+    border-radius: 30px;
+    outline: none;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+input,
+textarea {
+    font-size: 14px;
+    line-height: 17px;
+    font-family: inherit;
+    font-style: italic;
+}
+
+button[type="submit"] {
+    position: relative;
+
+    width: auto;
+    margin-left: 7px;
+
+    font-size: 15px;
+    font-family: "Fjalla One", sans-serif;
+    color: rgb(255,255,255);
+    text-transform: uppercase;
+
+    background-color: rgb(32,38,40);
+    border: none;
+    border-radius: 30px;
+
+    transition: color 0.2s linear;
+}
+
+button[type="submit"]::after {
+    content: "\f178";
+
+    display: inline-block;
+    margin-left: 10px;
+
+    font-size: 14px;
+    font-family: FontAwesome;
+    color: rgb(255,255,255);
+
+    transition: all 0.2s linear;
+}
+
+button[type="submit"]:hover {
+    color: rgb(232,76,61);
+
+    cursor: pointer;
+}
+
+button[type="submit"]:hover::after {
+    transform: translateX(3px);
+}
+
+.wrapper {
+    min-height: calc(100vh - 200px);
+}
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.container::after {
+    content: "";
+
+    display: block;
+    clear: both;
+}
+
+.link-more {
+    display: inline-block;
+
+    color: rgb(232, 76, 61);
+}
+
+.link-more::before,
+.link-more::after {
+    content: "=>";
+
+    padding: 0 3px;
+}
+
+.link-more:hover {
+    color: rgb(32, 38, 40);
+}
+
+
+/* top menu block */
+.top-menu {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    width: 100%;
+
+    font-family: "Fjalla One", sans-serif;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+
+    background-color: rgb(32, 38, 40);
+}
+
+.brand {
+    float: left;
+    padding: 28px 0 22px;
+
+    font-size: 25px;
+}
+
+.brand:hover {
+    color: rgb(232, 76, 61);
+}
+
+.main-navigation {
+    float: right;
+}
+
+.main-navigation > li {
+    display: inline-block;
+}
+
+.main-navigation a {
+    display: block;
+    padding: 33px 23px 33px 24px;
+
+    font-size: 13px;
+
+    transition: background-color 0.2s linear;
+}
+
+.main-navigation .active,
+.main-navigation a:hover {
+    background-color: rgb(232, 76, 61);
+}
+
+
+/* header block with slider */
+header {
+    margin-top: 80px;
+
+    font-family: "Fjalla One", sans-serif;
+
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+header .container {
+    padding-top: 290px;
+}
+
+.slider-navigation li {
+    display: inline-block;
+}
+
+.slider-navigation a {
+    position: relative;
+
+    display: block;
+    width: 35px;
+    height: 70px;
+
+    font-size: 26px;
+    color: rgb(51, 55, 51);
+
+    background-color: rgb(232, 76, 61);
+}
+
+.slider-navigation .back {
+    border-radius: 35px 0 0 35px;
+}
+
+.slider-navigation .forward {
+    margin-left: 1px;
+
+    border-radius: 0 35px 35px 0;
+}
+
+.slider-navigation i {
+    transition: color 0.1s linear;
+}
+
+.back:hover i,
+.forward:hover i {
+    color: rgb(255, 255, 255);
+}
+
+.slider-navigation i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.slider-heading {
+    position: relative;
+
+    float: left;
+    padding: 20px 0 60px;
+    overflow: hidden;
+
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+}
+
+.slider-heading h1 {
+    position: relative;
+
+    color: inherit;
+}
+
+.slider-heading a {
+    display: block;
+    margin-top: 10px;
+
+    font-size: 13px;
+    color: rgb(232, 76, 61);
+}
+
+.slider-heading a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.slider-heading h1:first-child::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    display: inline;
+    width: 100%;
+    height: 2px;
+    margin-top: -2px;
+    margin-left: 15px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+
+/* intro block */
+.row-intro {
+    padding: 60px 0;
+
+    background-color: rgb(231, 231, 231);
+}
+
+.row-intro li {
+    position: relative;
+
+    display: inline-block;
+    width: 270px;
+    margin: 20px 30px 10px 100px;
+
+    vertical-align: top;
+}
+
+.row-intro li:nth-child(3n) {
+    margin-right: 0;
+}
+
+.row-intro i {
+    position: absolute;
+    top: 0;
+    left: -100px;
+
+    width: 70px;
+    height: 70px;
+
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+
+    background-color: rgb(232, 76, 61);
+    border-radius: 50%;
+}
+
+.row-intro i::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.row-intro .link-more::after {
+    display: none;
+}
+
+
+/* news block with circle image */
+.row-news {
+    margin: 80px 0 60px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.row-news h2 {
+    margin: 0;
+}
+
+.row-news img {
+    float: right;
+    width: 354px;
+    height: 354px;
+
+    border-radius: 50%;
+}
+
+.row-news .content {
+    float: left;
+    width: 770px;
+}
+
+.row-news h4 {
+    margin: 30px 0 7px;
+    padding: 10px 0;
+
+    font-size: 20px;
+    line-height: 1;
+    color: rgb(232, 76, 61);
+
+    border-top: 1px solid rgb(231, 231, 231);
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+.row-news li {
+    display: inline-block;
+    width: 370px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+
+    vertical-align: top;
+}
+
+.row-news li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.row-news h3 {
+    margin-bottom: 0;
+}
+
+.row-news p {
+    margin-top: 8px;
+}
+
+.row-news a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+
+    font-size: 15px;
+    font-family: "Fjalla One", sans-serif;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+
+    background-color: rgb(232, 76, 61);
+    border-radius: 20px;
+
+    transition: background-color 0.2s linear;
+}
+
+.row-news a:hover {
+    background-color: rgb(32, 38, 40);
+}
+
+
+/* info block with subscribe button */
+.row-info .container {
+    padding: 50px 30px 36px;
+
+    background-color: rgb(232, 76, 61);
+    border-radius: 10px;
+}
+
+.row-info h2 {
+    margin-bottom: 25px;
+
+    color: rgb(255, 255, 255);
+}
+
+.quote {
+    position: relative;
+
+    float: left;
+    width: 540px;
+    padding-left: 100px;
+}
+
+.quote::before {
+    content: "\f007";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 70px;
+    height: 54px;
+    padding-top: 16px;
+
+    font-size: 34px;
+    font-family: FontAwesome;
+    text-align: center;
+    color: rgb(255, 255, 255);
+
+    background-color: rgb(32, 38, 40);
+    border-radius: 50%;
+}
+
+.quote p {
+    margin-top: -10px;
+
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+.quote cite {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.quote cite::before {
+    content: "-";
+
+    display: inline-block;
+    padding-right: 2px;
+}
+
+.subscribe {
+    float: right;
+    width: 510px;
+}
+
+.subscribe input {
+    width: 380px;
+}
+
+
+/* last block with feedback form */
+.row-last {
+    margin: 70px 0 60px;
+}
+
+.row-last .container > div {
+    float: left;
+    width: 370px;
+    margin-right: 30px;
+}
+
+.row-last .container > div:nth-child(3n) {
+    margin-right: 0;
+}
+
+.row-last ul {
+    margin-top: 25px;
+}
+
+.row-last li {
+    display: block;
+    padding: 15px 0;
+
+    border-top: 1px solid rgb(231, 231, 231);
+}
+
+.row-last li:last-child {
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+.blog img,
+.blog p {
+    display: inline-block;
+
+    vertical-align: middle;
+}
+
+.blog img {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+}
+
+.blog p {
+    width: 290px;
+    padding-left: 25px;
+}
+
+.blog a {
+    display: block;
+}
+
+.blog .link-more::before {
+    display: none;
+}
+
+.feedback-form form {
+    margin-top: 25px;
+    padding: 12px 30px;
+
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 310px;
+    margin: 10px 0;
+}
+
+.feedback-form textarea {
+    max-width: 310px;
+    min-height: 82px;
+
+    border-radius: 10px;
+}
+
+.feedback-form button[type="submit"] {
+    margin: 7px 0 17px;
+
+    color: rgb(255, 255, 255);
+
+    background-color: rgb(232, 76, 61);
+}
+
+.feedback-form button:hover {
+    color: rgb(32, 38, 40);
+}
+
+.contact-us h3 {
+    margin: 13px 0 5px;
+
+    color: rgb(232, 76, 61);
+}
+
+.contact-us p {
+    margin: 5px 0 8px;
+}
+
+.contact-us a {
+    display: block;
+
+    color: rgb(118, 124, 126);
+}
+
+.contact-us a:hover {
+    color: rgb(232, 76, 61);
+}
+
+.contact-us ul > li {
+    position: relative;
+
+    padding-left: 50px;
+}
+
+.contact-us li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-top: 25px;
+
+    font-size: 26px;
+    font-family: FontAwesome;
+}
+
+.contact-us .adds::before {
+    content: "\f015";
+}
+
+.contact-us .phone::before {
+    content: "\f098";
+}
+
+.contact-us .email::before {
+    content: "\f0e0";
+}
+
+
+/* footer block */
+footer {
+    height: 200px;
+
+    background-color: rgb(32, 38, 40);
+}
+
+footer .container {
+    padding-top: 80px;
+}
+
+.bottom-menu {
+    float: left;
+    width: 700px;
+}
+
+.bottom-navigation {
+    margin: 0 0 10px;
+}
+
+.bottom-navigation li {
+    display: inline-block;
+    margin-right: 17px;
+}
+
+.bottom-navigation a {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+.bottom-navigation a:hover {
+    color: rgb(232, 76, 61);
+}
+
+.bottom-navigation li:not(:last-child)::after {
+    content: "/";
+
+    margin-left: 17px;
+
+    font-size: 16px;
+    color: rgb(77, 83, 85);
+}
+
+address span {
+    font-size: 14px;
+    color: rgb(95, 101, 103);
+}
+
+address span a {
+    color: inherit;
+
+    transition: 0.2s color linear;
+}
+
+address span a:hover {
+    color: rgb(255, 255, 255);
+}
+
+address span:first-child {
+    color: rgb(232, 76, 61);
+}
+
+address span:not(:last-child)::after {
+    content: "/";
+
+    margin: 0 3px;
+
+    font-style: normal;
+}
+
+.social {
+    float: right;
+    width: 470px;
+}
+
+.social ul {
+    float: right;
+}
+
+.social li {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.social a {
+    position: relative;
+
+    display: block;
+    width: 43px;
+    height: 43px;
+    margin-left: 10px;
+
+    background-color: rgb(232, 76, 61);
+    border-radius: 50%;
+}
+
+.social li:nth-child(9n+1) a {
+    margin-left: 0;
+}
+
+.social a::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    font-size: 20px;
+    font-family: FontAwesome;
+    color: rgb(255, 255, 255);
+
+    transform: translate(-50%,-50%);
+
+    transition: color 0.2s linear;
+}
+
+.social a:hover::before {
+    color: rgb(32, 38, 40);
+}
+
+.facebook a::before {
+    content: "\f09a";
+}
+
+.twitter a::before {
+    content: "\f099";
+}
+
+.linkedin a::before {
+    content: "\f0e1";
+}
