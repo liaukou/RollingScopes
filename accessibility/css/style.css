@@ -47,6 +47,16 @@ a {
     background-color: rgb(255, 255, 255);
 }
 
+.wcag-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
 
 /* Music player block */
 .music {
@@ -62,6 +72,7 @@ a {
 }
 
 .music .right {
+    position: relative;
     float: right;
     width: 550px;
 }
@@ -114,32 +125,33 @@ a {
     opacity: 1;
 }
 
-.music .right h2,
-.music .right h3 {
+.music .right .title,
+.music .right .artist {
     margin: 13px 0 6px;
 
     font-weight: normal;
     font-size: 2.264rem;
 }
 
-.music .right h2 {
+.music .right .artist {
     margin-top: 13px;
 
     color: #a8a8a8;
 }
 
-.music .right h3 {
+.music .right .title {
     margin-top: 10px;
 
     color: #d6d6d6;
 }
 
 .music .progress-bar {
+    display: inline-block;
     position: relative;
 
     width: 488px;
     height: 9px;
-    margin-top: 16px;
+    margin-top: 10px;
 
     cursor: pointer;
 }
@@ -169,10 +181,9 @@ a {
     background-color: #4cd9c0;
 }
 
-.music .progress-bar .time-left {
-    position: absolute;
-    top: -5px;
-    right: -63px;
+.music .time-left {
+    display: inline-block;
+    margin-left: 25px;
 
     font-size: 1.585rem;
     color: #c6c6c6;
@@ -181,7 +192,7 @@ a {
 }
 
 .music .controls {
-    margin-top: 32px;
+    margin-top: 27px;
     margin-left: -4px;
 }
 
@@ -549,6 +560,7 @@ a {
 
 .weather .slide {
     transition: opacity 0.2s linear;
+    visibility: visible;
 }
 
 .weather .slide img {
@@ -560,6 +572,7 @@ a {
     position: absolute;
     top: 0;
     opacity: 0;
+    visibility: hidden;
 }
 
 .weather .controls {
@@ -750,7 +763,7 @@ a {
     color: #bebebe;
 }
 
-.login input:focus {
+.login input:not([type="submit"]):focus {
     border-left: 4px solid #ff8989;
     outline: 0;
 }
