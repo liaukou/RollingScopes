@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task - Forms and widgets</title>
+
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+    <div class="music widget" tabindex="0">
+        <h1 class="wcag-hidden">Widget - Music Player</h1>
+        <div class="left">
+            <img src="img/music-cover.jpg" alt="Faded Paper Figures, album cover" tabindex="0">
+            <a href="" role="button" title="follow">follow</a>
+        </div>
+        <div class="right">
+            <p class="artist">Faded Paper Figures</p>
+            <p class="title">Invent it all again</p>
+            <div class="progress-bar" role="slider" aria-label="Use arrow keys to rewind track" aria-valuemin="0" aria-valuemax="240" aria-valuenow="123" aria-valuetext="2:03" tabindex="0">
+                <div class="back"></div>
+                <div class="loading" style="width: 80%"></div>
+                <div class="progress" style="width: 60%"></div>
+            </div>
+            <span class="time-left">-1:57</span>
+            <div class="controls">
+                <a href="" class="play" role="button" aria-label="play from 2:03" title="play"></a>
+                <a href="" class="back" role="button" aria-label="previous track" title="previous track"></a>
+                <a href="" class="forward" role="button" aria-label="nex track" title="next track"></a>
+                <a href="" class="shuffle on" role="button" aria-label="shuffle" title="shuffle"></a>
+                <a href="" class="repeat" role="button" aria-label="repeat" title="repeat"></a>
+                <a href="" class="like on" role="button" aria-label="like active" title="like"></a>
+                <a href="" class="add" role="button" aria-label="add" title="add"></a>
+                <a href="" class="share" role="button" aria-label="share" title="share"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mail widget" tabindex="0">
+        <h1 class="wcag-hidden">Widget - Chat</h1>
+        <header>
+            <a href="" class="menu" role="button" title="menu"></a>
+            <a href="" class="add" role="button" title="new chat"></a>
+        </header>
+        <div class="wrapper">
+            <a href="" class="chat online">
+                <img src="img/ava.jpg" alt="Yaroslav Lozhkin avatar">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status">Alright got it!</p>
+                    <span class="status wcag-hidden">online</span>
+                </div>
+            </a>
+            <a href="" class="chat offline">
+                <img src="img/ava.jpg" alt="Yaroslav Lozhkin avatar">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status send"></p>
+                    <span class="status wcag-hidden">offline</span>
+                </div>
+            </a>
+            <a href="" class="chat away">
+                <img src="img/ava.jpg" alt="Wells Riley avatar">
+                <div class="content">
+                    <span class="name">Wells Riley</span>
+                    <p class="msg-status typing"></p>
+                    <span class="status wcag-hidden">away</span>
+                </div>
+            </a>
+            <a href="" class="chat do-not-disturb">
+                <img src="img/ava.jpg" alt="Yaroslav Lozhkin avatar">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status error"></p>
+                    <span class="status wcag-hidden">do not disturb</span>
+                </div>
+            </a>
+            <a href="" class="chat offline">
+                <img src="img/ava.jpg" alt="Yaroslav Lozhkin avatar">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status send"></p>
+                    <span class="status do-not-disturb">offline</span>
+                </div>
+            </a>
+            <a href="" class="chat offline">
+                <img src="img/ava.jpg" alt="Wells Riley avatar">
+                <div class="content">
+                    <span class="name">Wells Riley</span>
+                    <p class="msg-status typing">You can download it on git etc</p>
+                    <span class="status do-not-disturb">offline</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="weather widget" tabindex="0">
+        <h1 class="wcag-hidden">Widget - Weather</h1>
+        <div class="slider">
+            <div class="slide active" tabindex="0">
+                <img src="img/slide.jpg" alt="Zagora">
+                <div class="caption">
+                    <span class="temp f">73</span>
+                    <span class="location">Zagora, Greece</span>
+                    <span class="time">8:34 am</span>
+                </div>
+            </div>
+            <div class="slide" tabindex="0">
+                <img src="img/slide.jpg" alt="Minsk">
+                <div class="caption">
+                    <span class="temp f">78</span>
+                    <span class="location">Minsk, Belarus</span>
+                    <span class="time">8:34 am</span>
+                </div>
+            </div>
+            <div class="slide" tabindex="0">
+                <img src="img/slide.jpg" alt="Moscow">
+                <div class="caption">
+                    <span class="temp f">81</span>
+                    <span class="location">Moscow, Russia</span>
+                    <span class="time">8:34 am</span>
+                </div>
+            </div>
+            <ul class="controls" aria-label="Use arrow keys or navigate buttons to navigate between cities." tabindex="0">
+                <li class="active"><a href="" role="button" aria-label="slide Zagora"></a></li>
+                <li><a href="" role="button" aria-label="slide Minsk"></a></li>
+                <li><a href="" role="button" aria-label="slide Moscow"></a></li>
+            </ul>
+        </div>
+        <footer>
+            <a href="" class="fahrenheit active" role="button" aria-label="temperature in Fahrenheit">F</a>
+            <a href="" class="celsius" role="button" aria-label="temperature in Celsius">C</a>
+            <a href="" class="add" role="button" aria-label="add city"></a>
+            <a href="" class="list" role="button" aria-label="list of cities"></a>
+        </footer>
+    </div>
+
+    <form class="login widget" tabindex="0">
+        <h1 class="wcag-hidden">Widget - Login Form</h1>
+        <label class="email" for="email"></label><input id="email" type="email" aria-label="Email address" placeholder="Email Address...">
+        <hr>
+        <label class="pass" for="password"></label><input id="password" type="password" aria-label="Password" placeholder="Password...">
+        <footer>
+            <a role="button" title="sign up" href="#">sign up</a>
+            <input type="submit" value="sign in">
+        </footer>
+    </form>
+
+    <div class="calendar widget" tabindex="0">
+        <h1 class="wcag-hidden">Widget - Calendar</h1>
+        <header tabindex="0">
+            <a href="" class="back" role="button" aria-label="previous month"></a>
+            <div>
+                <span class="year">2012</span>
+                <p class="month" id="month">JULY</p>
+            </div>
+            <a href="" class="forward" role="button" aria-label="next month"></a>
+        </header>
+        <table>
+                <thead>
+                    <tr>
+                        <th>S<span class="wcag-hidden">unday</span></th>
+                        <th>M<span class="wcag-hidden">onday</span></th>
+                        <th>T<span class="wcag-hidden">uesday</span></th>
+                        <th>W<span class="wcag-hidden">ednesday</span></th>
+                        <th>T<span class="wcag-hidden">hursday</span></th>
+                        <th>F<span class="wcag-hidden">riday</span></th>
+                        <th>S<span class="wcag-hidden">aturday</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="" aria-labelledby="month">1</a></td>
+                        <td><a href="" aria-labelledby="month">2</a></td>
+                        <td><a href="" aria-labelledby="month">3</a></td>
+                        <td><a href="" aria-labelledby="month">4</a></td>
+                        <td><a href="" aria-labelledby="month">5</a></td>
+                        <td><a href="" class="active" title="active" aria-label="active" aria-labelledby="month">6</a></td>
+                        <td><a href="" aria-labelledby="month">7</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" aria-labelledby="month">8</a></td>
+                        <td><a href="" aria-labelledby="month">9</a></td>
+                        <td><a href="" aria-labelledby="month">10</a></td>
+                        <td><a href="" aria-labelledby="month">11</a></td>
+                        <td><a href="" aria-labelledby="month">12</a></td>
+                        <td><a href="" aria-labelledby="month">13</a></td>
+                        <td><a href="" aria-labelledby="month">14</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" aria-labelledby="month">15</a></td>
+                        <td><a href="" aria-labelledby="month">16</a></td>
+                        <td><a href="" aria-labelledby="month">17</a></td>
+                        <td><a href="" aria-labelledby="month">18</a></td>
+                        <td><a href="" aria-labelledby="month">19</a></td>
+                        <td><a href="" aria-labelledby="month">20</a></td>
+                        <td><a href="" aria-labelledby="month">21</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" aria-labelledby="month">22</a></td>
+                        <td><a href="" aria-labelledby="month">23</a></td>
+                        <td><a href="" aria-labelledby="month">24</a></td>
+                        <td><a href="" aria-labelledby="month">25</a></td>
+                        <td><a href="" aria-labelledby="month">26</a></td>
+                        <td><a href="" aria-labelledby="month">27</a></td>
+                        <td><a href="" aria-labelledby="month">28</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" aria-labelledby="month">29</a></td>
+                        <td><a href="" aria-labelledby="month">30</a></td>
+                        <td><a href="" aria-labelledby="month">31</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+
+    <div class="converter widget" tabindex="0">
+        <h1 class="wcag-hidden">Widget - Converter</h1>
+        <div class="row usd">
+            <label for="usd">USD</label>
+            <input type="text" id="usd" value="$356.3" placeholder="$356.3">
+        </div>
+        <div class="row gbp">
+            <label for="gbp">GBP</label>
+            <input type="text" id="gbp" placeholder="&pound;156.3">
+        </div>
+        <footer>
+            <a href="" class="convert" role="button" title="convert"></a>
+            <a href="" class="num-pad" role="button" title="num-pad"></a>
+            <a href="" class="add" role="button" title="add currency"></a>
+        </footer>
+    </div>
+
+    <div class="buttons widget" tabindex="0">
+        <h1 class="wcag-hidden">Widget - Buttons</h1>
+        <div class="left">
+            <input class="valid" type="text" aria-label="Input data valid" placeholder="Valid input">
+            <input type="range" role="slider" aria-label="Selected value: 50. Use arrow keys to change it." min="0" max="100" value="50" step="1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <input class="invalid" type="text" aria-label="Input data invalid" placeholder="Invalid input">
+        </div>
+        <div class="right">
+            <input type="checkbox" id="checkbox" aria-label="Use space key to check or unckeck this box." checked>
+            <label for="checkbox"></label>
+            <input type="radio" name="radio" id="radio1" aria-label="Selected radio1. Use arrow keys to select another one.">
+            <label for="radio1"></label>
+            <input type="radio" name="radio" id="radio2" aria-label="Selected radio2. Use arrow keys to select another one." checked>
+            <label for="radio2"></label>
+        </div>
+    </div>
+
+
+</body>
+</html>

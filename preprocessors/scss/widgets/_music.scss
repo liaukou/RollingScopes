@@ -1,0 +1,232 @@
+.music {
+    width: 728px;
+    padding: 7px 14px 14px 8px;
+
+    font-size: 0;
+
+    @extend %clearfix;
+
+    .left {
+        float: left;
+        width: 126px;
+
+        img {
+            @include size(126px);
+        }
+
+        a {
+            position: relative;
+
+            display: block;
+            margin-top: 12px;
+            padding: 13px 17px;
+
+            font-size: 1.358rem;
+            line-height: 14px;
+            font-family: $sans-bold;
+            text-align: right;
+            color: $text-inverse;
+            text-transform: uppercase;
+
+            background-color: $brand-tertiary;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 11px;
+                left: 17px;
+
+                display: block;
+
+                @include bg-position('../img/music-sprite.png');
+                @include transition();
+                @include size(15px, 15px);
+            }
+
+            &::after {
+                background-position-y: -24px;
+                @include opacity();
+            }
+
+            &:hover::after {
+                @include opacity(1);
+            }
+        }
+    }
+
+    .right {
+        position: relative;
+
+        float: right;
+        width: 550px;
+
+        .artist {
+            @extend %music-title-artist;
+        }
+
+        .title {
+            margin-top: 10px;
+
+            color: $text;
+
+            @extend %music-title-artist;
+        }
+    }
+
+    .progress-bar {
+        position: relative;
+
+        display: inline-block;
+        margin-top: 10px;
+
+        cursor: pointer;
+
+        @include size(488px, 9px);
+
+        .progress {
+            background-color: $brand-primary;
+
+            @extend %music-slider;
+        }
+
+        .loading {
+            background-color: lighten($brand-primary, 25%);
+
+            @extend %music-slider;
+        }
+
+        .back {
+            width: 100%;
+
+            background-color: lighten($text, 15%);
+
+            @extend %music-slider;
+        }
+    }
+
+    .time-left {
+        display: inline-block;
+        margin-left: 25px;
+
+        font-size: 1.585rem;
+        color: $text;
+
+        cursor: text;
+    }
+
+    .controls {
+        margin-top: 27px;
+        margin-left: -4px;
+
+        a {
+            position: relative;
+
+            display: inline-block;
+
+            vertical-align: middle;
+
+            @include size(30px);
+
+            &::before,
+            &::after {
+                content: '';
+
+                display: block;
+
+                transform: translate3d(-50%, -50%, 0);
+
+                @include bg-position('../img/music-sprite.png');
+                @include transition();
+                @include absolute-center();
+            }
+
+            &.play {
+                background-color: $brand-primary;
+                border-radius: 50%;
+
+                @include size(45px);
+
+                &::before,
+                &::after {
+                    left: 24px;
+
+                    @include size-and-position-x(15px, 17px, -14px);
+                }
+
+                &.on::before,
+                &.on::after {
+                    left: 22px;
+
+                    @include size-and-position-x(12px, 17px, -190px);
+                }
+            }
+
+            &.back {
+                margin: 0 23px 0 45px;
+
+                &::before,
+                &::after {
+                    @include size-and-position-x(24px, 19px, -28px);
+                }
+            }
+
+            &.forward::before,
+            &.forward::after {
+                @include size-and-position-x(24px, 19px, -51px);
+            }
+
+            &.shuffle {
+                margin: 0 45px 0 35px;
+
+                &::before,
+                &::after {
+                    @include size-and-position-x(24px, 20px, -74px);
+                }
+            }
+
+            &.repeat::before,
+            &.repeat::after {
+                @include size-and-position-x(26px, 19px, -97px);
+            }
+
+            &.like {
+                margin: 0 49px 0 50px;
+
+                &::before,
+                &::after {
+                    @include size-and-position-x(23px, 20px, -122px);
+                }
+            }
+
+            &.add::before,
+            &.add::after {
+                @include size-and-position-x(25px, 25px, -144px);
+            }
+
+            &.share {
+                margin-left: 50px;
+
+                &::before,
+                &::after {
+                    @include size-and-position-x(23px, 20px, -168px);
+                }
+            }
+
+            &:not(.play).on::before,
+            &::after {
+                background-position-y: -24px;
+            }
+
+
+            &::after {
+                @include opacity();
+            }
+
+            &:not(.on):hover::after,
+            &.play.on:hover::after {
+                @include opacity(1);
+            }
+        }
+    }
+}

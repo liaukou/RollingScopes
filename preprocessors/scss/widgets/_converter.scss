@@ -1,0 +1,103 @@
+.converter {
+    width: 307px;
+
+    .row {
+        display: block;
+        padding: 30px 0 33px 30px;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid lighten($text, 10%);
+        }
+    }
+
+    label {
+        display: inline-block;
+        padding-right: 29px;
+
+        font-size: 1.811rem;
+        font-family: $sans-medium;
+        vertical-align: middle;
+        color: $text;
+    }
+
+    input {
+        display: inline-block;
+        width: 185px;
+        padding: 2px 0;
+
+        font-size: 4.075rem;
+        font-family: $sans;
+        vertical-align: middle;
+        text-align: right;
+        color: $text;
+
+        border: 0;
+        border-left: 1px solid lighten($text, 10%);
+
+        @include placeholder(lighten($text, 10%));
+    }
+
+    footer {
+        background-color: $brand-tertiary;
+
+        @extend %clearfix;
+
+        a {
+            position: relative;
+
+            display: block;
+            float: right;
+
+            @include size(73px, 64px);
+
+            &::before,
+            &::after {
+                content: '';
+
+                display: block;
+
+                transform: translate3d(-50%, -50%, 0);
+
+                @include transition();
+                @include bg-position('../img/sprite.png', 0, -131px);
+                @include size(33px, 12px);
+                @include absolute-center;
+            }
+
+            &::after {
+                background-position-y: -161px;
+
+                @include opacity();
+            }
+
+            &:hover::after {
+                @include opacity(1);
+            }
+
+            &:hover::before {
+                @include opacity();
+            }
+        }
+
+        .convert {
+            float: left;
+            width: 102px;
+
+            background-color: $brand-secondary;
+        }
+
+        .num-pad {
+            &::before,
+            &::after {
+                @include size-and-position-x(31px, 30px, -33px);
+            }
+        }
+
+        .add {
+            &::before,
+            &::after {
+                @include size-and-position-x(27px, 27px, -64px);
+            }
+        }
+    }
+}

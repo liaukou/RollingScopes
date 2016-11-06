@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font: 10px $sans;
+}
+
+body {
+    background-color: $background;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wcag-hidden {
+    @extend %wcag-hidden;
+}

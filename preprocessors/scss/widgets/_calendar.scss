@@ -1,0 +1,140 @@
+.calendar {
+    width: 307px;
+
+    header {
+        font-size: 0;
+        color: $text-inverse;
+
+        background-color: $brand-tertiary;
+
+        > * {
+            display: inline-block;
+
+            vertical-align: top;
+        }
+
+        div {
+            width: 223px;
+            margin-top: 14px;
+
+            text-align: center;
+
+            .year {
+                font-size: 1.721rem;
+                line-height: 18px;
+            }
+
+            .month {
+                margin-top: 10px;
+
+                font-size: 1.811rem;
+                line-height: 19px;
+                font-family: $sans-medium;
+            }
+        }
+
+        a {
+            position: relative;
+
+            @include size(40px, 85px);
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 29px;
+                left: 14px;
+
+                display: block;
+
+                @include transition();
+                @include bg-position('../img/sprite.png', 0, -108px);
+                @include size(12px, 23px);
+            }
+
+            &::after {
+                background-position-x: -24px;
+
+                @include opacity();
+            }
+
+            &.forward {
+                width: 44px;
+
+                &::before {
+                    background-position-x: -12px;
+                }
+
+                &::after {
+                    background-position-x: -36px;
+                }
+            }
+
+            &:hover::after {
+                @include opacity(1);
+            }
+        }
+    }
+
+    table {
+        border-spacing: 0;
+        font-size: 1.721rem;
+
+        thead {
+            color: darken($brand-primary, 15%);
+
+            background-color: $brand-primary;
+
+            th {
+                line-height: 54px;
+
+                &:last-child {
+                    width: 49px;
+                    padding-right: 8px;
+                }
+            }
+        }
+
+        tbody {
+            color: $text;
+
+            tr:first-child {
+                height: 52px;
+
+                vertical-align: bottom;
+
+                &:last-child {
+                    height: 47px;
+
+                    vertical-align: top;
+                }
+            }
+
+            a {
+                display: block;
+                width: 31px;
+                margin: 6px 5px;
+
+                line-height: 31px;
+                text-align: center;
+                color: inherit;
+
+                border-radius: 50%;
+
+                @include transition(color, 0.2s, linear, 0s, background-color 0.2s linear 0s);
+
+                &:hover {
+                    color: $text-inverse;
+
+                    background-color: $brand-primary;
+                }
+
+                &.active {
+                    color: $text-inverse;
+
+                    background-color: $brand-secondary;
+                }
+            }
+        }
+    }
+}
