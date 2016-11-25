@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task - Forms and widgets</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="music widget clear-fix">
+        <div class="left">
+            <img src="img/music-cover.jpg" alt="" class="cover">
+            <a href="#">follow</a>
+        </div>
+        <div class="right">
+            <h2 class="title">Faded Paper Figures</h2>
+            <h3 class="artist">Invent it all again</h3>
+            <div class="progress-bar">
+                <div class="back"></div>
+                <div class="loading" style="width: 80%"></div>
+                <div class="progress" style="width: 60%"></div>
+                <span class="time-left">-1:57</span>
+            </div>
+            <div class="controls">
+                <a href="#" class="play "></a>
+                <a href="#" class="back "></a>
+                <a href="#" class="forward "></a>
+                <a href="#" class="shuffle "></a>
+                <a href="#" class="repeat "></a>
+                <a href="#" class="like on"></a>
+                <a href="#" class="add "></a>
+                <a href="#" class="share "></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mail widget">
+        <header class="clear-fix">
+            <a href="#" class="menu"></a>
+            <a href="#" class="add"></a>
+        </header>
+        <div class="wrapper">
+            <a class="chat online" href="#">
+                <img src="img/ava.jpg" alt="description">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status">Alright got it!</p>
+                </div>
+            </a>
+            <a class="chat offline" href="#">
+                <img src="img/ava.jpg" alt="description">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status send"></p>
+                </div>
+            </a>
+            <a class="chat away" href="#">
+                <img src="img/ava.jpg" alt="description">
+                <div class="content">
+                    <span class="name">Wells Riley</span>
+                    <p class="msg-status typing"></p>
+                </div>
+            </a>
+            <a class="chat do-not-disturb" href="#">
+                <img src="img/ava.jpg" alt="description">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status error"></p>
+                </div>
+            </a>
+            <a class="chat" href="#">
+                <img src="img/ava.jpg" alt="description">
+                <div class="content">
+                    <span class="name">Yaroslav Lozhkin</span>
+                    <p class="msg-status send"></p>
+                </div>
+            </a>
+            <a class="chat" href="#">
+                <img src="img/ava.jpg" alt="description">
+                <div class="content">
+                    <span class="name">Wells Riley</span>
+                    <p class="msg-status typing">You can download it on git etc</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="weather widget">
+        <div class="slider">
+            <div class="slide active">
+                <img src="img/slide.jpg" alt="description">
+                <div class="caption">
+                    <span class="temp f">73</span>
+                    <span class="location">Zagora, Greece</span>
+                    <span class="time">8:34 am</span>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/slide.jpg" alt="description">
+                <div class="caption">
+                    <span class="temp f">78</span>
+                    <span class="location">Minsk, Belarus</span>
+                    <span class="time">8:34 am</span>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="img/slide.jpg" alt="description">
+                <div class="caption">
+                    <span class="temp f">81</span>
+                    <span class="location">Moscow, Russia</span>
+                    <span class="time">8:34 am</span>
+                </div>
+            </div>
+            <ul class="controls">
+                <li class="active"><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+        <footer>
+            <a class="active" href="">F</a>
+            <a href="">C</a>
+            <a class="add" href="#"></a>
+            <a class="list" href="#"></a>
+        </footer>
+    </div>
+
+    <form class="login widget">
+        <label class="email" for="email"></label><input id="email" type="email" placeholder="Email Address...">
+        <hr>
+        <label class="pass" for="password"></label><input id="password" type="password" placeholder="Password...">
+        <footer>
+            <a href="#">sign up</a>
+            <input type="submit" value="sign in">
+        </footer>
+    </form>
+
+    <div class="calendar widget">
+        <header>
+            <a class="back" href="#"></a>
+            <div>
+                <div class="year">2012</div>
+                <div class="month">JULY</div>
+            </div>
+            <a class="forward" href="#"></a>
+        </header>
+        <table>
+                <thead>
+                    <tr>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">1</a></td>
+                        <td><a href="#">2</a></td>
+                        <td><a href="#">3</a></td>
+                        <td><a href="#">4</a></td>
+                        <td><a href="#">5</a></td>
+                        <td><a href="#" class="active">6</a></td>
+                        <td><a href="#">7</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">8</a></td>
+                        <td><a href="#">9</a></td>
+                        <td><a href="#">10</a></td>
+                        <td><a href="#">11</a></td>
+                        <td><a href="#">12</a></td>
+                        <td><a href="#">13</a></td>
+                        <td><a href="#">14</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">15</a></td>
+                        <td><a href="#">16</a></td>
+                        <td><a href="#">17</a></td>
+                        <td><a href="#">18</a></td>
+                        <td><a href="#">19</a></td>
+                        <td><a href="#">20</a></td>
+                        <td><a href="#">21</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">22</a></td>
+                        <td><a href="#">23</a></td>
+                        <td><a href="#">24</a></td>
+                        <td><a href="#">25</a></td>
+                        <td><a href="#">26</a></td>
+                        <td><a href="#">27</a></td>
+                        <td><a href="#">28</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">29</a></td>
+                        <td><a href="#">30</a></td>
+                        <td><a href="#">31</a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+
+    <div class="converter widget">
+        <div class="row usd">
+            <label for="usd">USD</label>
+            <input type="text" id="usd" value="$356.3" placeholder="$356.3">
+        </div>
+        <div class="row gbp">
+            <label for="gbp">GBP</label>
+            <input type="text" id="gbp" placeholder="&pound;156.3">
+        </div>
+        <footer class="clear-fix">
+            <a class="convert" href="#"></a>
+            <a class="num-pad" href="#"></a>
+            <a class="add" href="#"></a>
+        </footer>
+    </div>
+
+    <div class="buttons widget clear-fix">
+        <div class="left">
+            <input class="valid" type="text" placeholder="Valid input">
+            <input type="range">
+            <input class="invalid" type="text" placeholder="Invalid input">
+        </div>
+        <div class="right">
+            <input type="checkbox" id="checkbox" checked>
+            <label for="checkbox"></label>
+            <input type="radio" name="radio" id="radio1">
+            <label for="radio1"></label>
+            <input type="radio" name="radio" id="radio2" checked>
+            <label for="radio2"></label>
+        </div>
+    </div>
+
+
+</body>
+</html>
