@@ -23,7 +23,11 @@
  *    console.log(r.getArea());   // => 200
  */
 function Rectangle(width, height) {
-    throw new Error('Not implemented');
+    this.width = width;
+    this.height = height;
+    Rectangle.prototype.getArea = function () {
+        return this.width * this.height;
+    };
 }
 
 
@@ -38,7 +42,7 @@ function Rectangle(width, height) {
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
 function getJSON(obj) {
-    throw new Error('Not implemented');
+    return JSON.stringify(obj);
 }
 
 
@@ -54,7 +58,9 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-    throw new Error('Not implemented');
+    var obj = JSON.parse(json);
+    obj.__proto__ = proto;
+    return obj;
 }
 
 
@@ -107,33 +113,57 @@ function fromJSON(proto, json) {
  */
 
 const cssSelectorBuilder = {
+    elem: '',
+    ids: '',
+    classes: '',
+    attrs: '',
+    pseudoClasses: '',
+    pseudoElem: '',
+
+    stringify: function() {
+        let res = this.elem+this.ids+this.classes+this.attrs+this.pseudoClasses+this.pseudoElem;
+        this.elem = '';
+        this.ids = '';
+        this.classes = '';
+        this.attrs = '';
+        this.pseudoClasses = '';
+        this.pseudoElem = '';
+        return res;
+    },
 
     element: function(value) {
-        throw new Error('Not implemented');
+        this.elem = value;
+        return this;
     },
 
     id: function(value) {
-        throw new Error('Not implemented');
+        this.ids += '#' + value;
+        return this;
     },
 
     class: function(value) {
-        throw new Error('Not implemented');
+        this.classes += '.' + value;
+        return this;
     },
 
     attr: function(value) {
-        throw new Error('Not implemented');
+        this.attrs += '[' + value + ']';
+        return this;
     },
 
     pseudoClass: function(value) {
-        throw new Error('Not implemented');
+        this.pseudoClasses += ':' + value;
+        return this;
     },
 
     pseudoElement: function(value) {
-        throw new Error('Not implemented');
+        this.pseudoElem = '::' + value;
+        return this;
     },
 
     combine: function(selector1, combinator, selector2) {
-        throw new Error('Not implemented');
+        let res = selector1.stringify() + combinator + selector2.stringify();
+        return res;
     },
 };
 
