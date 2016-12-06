@@ -1,0 +1,58 @@
+h2 {
+    margin: 5px;
+}
+#game-field {
+    position: relative;
+    margin: 0 auto;
+    background-image: url(../img/tunnel_road.jpg);
+    overflow: hidden;
+}
+
+#start {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#start > h2 {
+    margin-top: 50%;
+}
+
+#hp {
+    text-align: center;
+}
+
+#score {
+    text-align: center;
+}
+
+#speed {
+    text-align: center;
+}
+
+#player {
+    position: absolute;
+    background-image: url(../img/sprite.png);
+    background-position: 0 0;
+
+    transition: transform 0.05s linear;
+    z-index: 2;
+}
+
+#enemy {
+    position: absolute;
+    background-image: url(../img/sprite.png);
+    background-position: 0 -91px;
+}
+
+#aid-kit {
+    position: absolute;
+    background-image: url(../img/sprite.png);
+    background-position: 0 -149px;
+    z-index: 1;
+}
