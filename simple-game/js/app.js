@@ -47,8 +47,8 @@ player.updateMove();
 start.innerHTML = `<h2>START NEW GAME</h2>`;
 
 
-const makeObjects = function(className, array, width, heigth, areaWidth) {
-    array.push(new className(width, heigth, areaWidth));
+const makeObjects = function(className, array, width, heigth, areaWidth, playerHeight) {
+    array.push(new className(width, heigth, areaWidth, playerHeight));
     let cur = array[array.length - 1];
     cur.updateMove();
     gameArea.el.appendChild(cur.el);
@@ -155,7 +155,7 @@ const startGame = function() {
 
     player.updateMove();
 
-    makeEnemies = setInterval(makeObjects, 1000, Enemy, enemies, enemyWidth, enemyHeight, areaWidth);
+    makeEnemies = setInterval(makeObjects, 1000, Enemy, enemies, enemyWidth, enemyHeight, areaWidth, playerHeight);
     makeMedKits = setInterval(makeObjects, 8500, MedKit, medKits, medKitWidth, medKitHeight, areaWidth);
     updateAll   = setInterval(update, 1000/60);
     updateSpeed = setInterval(increaseSpeed, 6000);

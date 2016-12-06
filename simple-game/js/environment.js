@@ -20,12 +20,14 @@ class GameArea {
 }
 
 class Enemy {
-    constructor(width, height, areaWidth) {
+    constructor(width, height, areaWidth, playerHeight) {
         this.width           = width;
         this.height          = height;
+        this.areaWidth       = areaWidth;
+        this.playerHeight    = playerHeight;
         this.el              = document.createElement('div');
         this.el.id           = 'enemy';
-        this.positionX       = Math.random() * (areaWidth - this.width);
+        this.positionX       = Math.random() * (this.areaWidth - this.width);
         this.positionY       = -this.height;
         this.el.style.width  = this.width  + 'px';
         this.el.style.height = this.height + 'px';
@@ -41,7 +43,7 @@ class Enemy {
     }
 
     updateState() {
-        this.el.style.backgroundPosition = `${-this.width}px -${playerHeight}px`;
+        this.el.style.backgroundPosition = `${-this.width}px -${this.playerHeight}px`;
     }
 }
 
@@ -49,11 +51,12 @@ class MedKit {
     constructor(width, height, areaWidth) {
         this.width           = width;
         this.height          = height;
+        this.areaWidth       = areaWidth;
         this.el              = document.createElement('div');
         this.el.id           = 'aid-kit';
         this.el.style.width  = this.width  + 'px';
         this.el.style.height = this.height + 'px';
-        this.positionX       = Math.random() * (areaWidth - this.width);
+        this.positionX       = Math.random() * (this.areaWidth - this.width);
         this.positionY       = -this.height;
     }
 
