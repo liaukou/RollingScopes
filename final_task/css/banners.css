@@ -138,11 +138,9 @@
 
 .banner-title-vertical h3 {
     margin: 0;
-    /*padding-right: 120px;*/
     color: #ffffff;
     font-family: 'Ramaraja', serif;
     font-size: 50px;
-    /*transform: rotate(-90deg);*/
 }
 
 .banner-title-vertical .flag {
