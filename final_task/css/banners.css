@@ -1,0 +1,221 @@
+.banners {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.banner {
+    position: relative;
+    margin-bottom: 5px;
+    line-height: 0;
+}
+
+.banner>* {
+    line-height: 1.15;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 42, 79, 0.88);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.banner .product-caption {
+    bottom: 30px;
+    right: 0;
+}
+
+.banner:hover::before, .banner:hover .product-caption {
+    opacity: 1;
+}
+
+.banner:hover .banner-subtitle, .banner:hover .banner-title {
+    opacity: 0;
+}
+
+.banner .banner-subtitle {
+    position: absolute;
+    bottom: 10px;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #ffffff;
+    background-color: #f0626e;
+    text-transform: uppercase;
+    font-family: 'Ramaraja', serif;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+.banner .banner-title {
+    position: absolute;
+    bottom: 50px;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(54, 42, 79, 0.88);
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+
+.banner .banner-title h3 {
+    margin: 0;
+    color: #f0626e;
+    font-family: 'Ramaraja', serif;
+    font-size: 40px;
+}
+
+.banner .banner-title p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.banners-left .banner-medium::before {
+    background: none;
+}
+
+.banners-left .banner-medium .product-caption {
+    bottom: 0;
+}
+
+.banners-left .banner-medium .product-caption .title {
+    padding-left: 40px;
+    padding-right: 40px;
+    text-transform: uppercase;
+    font-size: 30px;
+    background-color: rgba(54, 42, 79, 0.88);
+}
+
+.banners-left .banner-medium .product-caption .title:hover {
+    color: #f0626e;
+}
+
+.banners-right .banner-title {
+    bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.banners-right .banner-title h3 {
+    font-size: 25px;
+}
+
+.banners-right .banner-title p {
+    font-size: 12px;
+}
+
+.banners-right .banner-big::before {
+    background: none;
+}
+
+.banner-title-vertical {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 380px;
+    height: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(54, 42, 79, 0.88);
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+    transform: rotate(-90deg) translate3d(145px, 145px, 0);
+}
+
+.banner-title-vertical h3 {
+    margin: 0;
+    /*padding-right: 120px;*/
+    color: #ffffff;
+    font-family: 'Ramaraja', serif;
+    font-size: 50px;
+    /*transform: rotate(-90deg);*/
+}
+
+.banner-title-vertical .flag {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    width: 90px;
+    height: 100px;
+    background-color: #f0626e;
+}
+
+.banner-title-vertical .flag::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #c6535d;
+    z-index: -1;
+}
+
+.banner-title-vertical .flag a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.banner-title-vertical .flag a::after {
+    content: '\f105';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #f0626e;
+    font-family: fontawesome;
+    font-size: 35px;
+    transform: translate(-50%,-50%) rotate(90deg);
+    transition: transform 0.2s;
+}
+
+.banner-title-vertical .flag a:hover::after {
+    transform: translate(-50%,-40%) rotate(90deg);
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 5px;
+    background-color: #f0626e;
+}
+
+.search input {
+    width: 485px;
+    height: 70px;
+    padding-left: 25px;
+    padding-right: 25px;
+    letter-spacing: 1px;
+    border: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.search label a {
+    color: #ffffff;
+    font-size: 55px;
+}

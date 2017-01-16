@@ -1,0 +1,149 @@
+.menu-main ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.menu-main li {
+    padding-left: 30px;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.menu-main a {
+    color: inherit;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+
+.menu-main a:hover {
+    color: #f0626e;
+}
+
+.menu-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.menu-user .logo-top {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu-user img {
+    margin-top: -20px;
+    width: 153px;
+    height: 108px;
+}
+
+.menu-user ul {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #f6f6f6;
+}
+
+.menu-user li {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-left: 5px;
+    background-color: #05aecc;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+
+.menu-user li:nth-child(2n) {
+    background-color: #f0626e;
+}
+
+.menu-user li:hover {
+    background-color: #ffffff;
+}
+
+.menu-user li a {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    color: inherit;
+    letter-spacing: 1px;
+}
+
+.menu-user li:hover a {
+    color: #05aecc;
+}
+
+.menu-user li:nth-child(2n):hover a {
+    color: #f0626e;
+}
+
+.menu-user .wishlist a {
+    position: relative;
+    padding-right: 50px;
+}
+
+.menu-user .wishlist a::after {
+    content: '\f06b';
+    position: absolute;
+    right: 15px;
+    margin-top: -5px;
+    font-family: fontawesome;
+    color: inherit;
+    font-size: 25px;
+}
+
+.menu-user .cart a {
+    position: relative;
+    padding-right: 50px;
+}
+
+.menu-user .cart a::after {
+    content: '\f07a';
+    position: absolute;
+    right: 15px;
+    margin-top: -5px;
+    font-family: fontawesome;
+    color: inherit;
+    font-size: 25px;
+}
+
+.menu-category {
+    background-color: #05aecc;
+    text-align: center;
+}
+
+.menu-category > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu-category li {
+    padding-top: 27px;
+    padding-bottom: 27px;
+}
+
+.menu-category a {
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.menu-category a:hover {
+    background-color: #ffffff;
+    color: #f0626e;
+}
+
+.menu-category li:hover .dropdown-menu {
+    opacity: 1;
+    z-index: 1;
+}
