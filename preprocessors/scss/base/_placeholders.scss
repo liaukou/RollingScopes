@@ -1,0 +1,97 @@
+%clearfix {
+    &::before,
+    &::after {
+        content: '';
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
+%wcag-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// widget music
+%music-title-artist {
+    margin: 13px 0 6px;
+
+    font-weight: normal;
+    font-size: 2.264rem;
+    color: darken($text, 15%);
+}
+
+%music-slider {
+    position: absolute;
+    top: 0;
+
+    height: 9px;
+
+    border-radius: 10px;
+}
+
+// widget mail
+%mail-header-buttons {
+    position: relative;
+
+    @include size(75px, 64px);
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: block;
+
+        @include bg-position('../img/sprite.png');
+        @include transition();
+    }
+
+    &::after {
+        background-position-y: -27px;
+        @include opacity;
+    }
+
+    &:hover::after {
+        @include opacity(1);
+    }
+}
+
+// log-in weather
+%log-in-labels {
+    position: absolute;
+
+    display: block;
+
+    @include bg-position('../img/sprite.png', -77px);
+}
+
+%log-in-buttons {
+    display: inline-block;
+    width: 50%;
+    padding: 22px;
+
+    font-size: 1.811rem;
+    line-height: 22px;
+    font-family: $sans-bold;
+    vertical-align: top;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include transition(color);
+
+    &:hover {
+        color: $text-inverse;
+    }
+}

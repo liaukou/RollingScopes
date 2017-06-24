@@ -1,0 +1,81 @@
+.login {
+    position: relative;
+
+    width: 307px;
+
+    font-size: 0;
+
+    @at-root {
+        hr {
+            height: 1px;
+            margin: 0;
+
+            background-color: lighten($text, 10%);
+            border: 0;
+        }
+    }
+
+    input:not([type='submit']) {
+        display: block;
+        width: 100%;
+        padding: 26px 26px 26px 66px;
+
+        font-size: 2.038rem;
+        line-height: 21px;
+        font-family: $sans;
+        color: darken($text, 15%);
+
+        border: 0;
+        border-left: 4px solid transparent;
+
+        @include placeholder($text);
+        @include transition(border-color);
+
+        &:focus {
+            border-color: $brand-secondary;
+            outline: 0;
+        }
+    }
+
+    .email {
+        top: 26px;
+        left: 25px;
+
+        @extend %log-in-labels;
+        @include size(21px, 22px);
+    }
+
+    .pass {
+        top: 95px;
+        left: 27px;
+
+        background-position-y: -22px;
+
+        @extend %log-in-labels;
+        @include size(18px, 24px);
+    }
+
+    footer {
+        margin-top: -2px;
+
+        background-color: lighten($brand-tertiary, 15%);
+    }
+
+    a {
+        color: $brand-tertiary;
+
+        background-color: transparent;
+
+        @extend %log-in-buttons;
+    }
+
+    input[type='submit'] {
+        color: lighten($brand-tertiary, 15%);
+
+        background-color: $brand-tertiary;
+        border: 0;
+        cursor: pointer;
+
+        @extend %log-in-buttons;
+    }
+}

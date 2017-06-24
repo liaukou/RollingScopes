@@ -1,0 +1,167 @@
+.weather {
+    width: 307px;
+
+    font-size: 0;
+
+    .slider {
+        position: relative;
+
+        height: 248px;
+    }
+
+    .slide {
+        visibility: visible;
+
+        @include transition();
+
+        &:not(.active) {
+            position: absolute;
+            top: 0;
+
+            visibility: hidden;
+
+            @include opacity(1);
+        }
+
+        img {
+            @include size(307px, 248px);
+        }
+    }
+
+    .controls {
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+
+        li {
+            display: inline-block;
+            margin-left: 8px;
+
+            background-color: darken($brand-primary, 10%);
+            border-radius: 50%;
+
+            @include transition(background-color);
+            @include size(7px);
+
+            &.active {
+                background-color: darken($brand-primary, 25%);
+            }
+
+            &:not(.active):hover {
+                background-color: $text-inverse;
+            }
+        }
+
+        a {
+            display: block;
+            margin-top: -4px;
+            margin-left: -4px;
+
+            @include size(15px);
+        }
+    }
+
+    .caption {
+        position: absolute;
+        bottom: 10px;
+        left: 12px;
+
+        span {
+            display: block;
+            margin-top: 2px;
+
+            font-size: 1.675rem;
+            color: $text-inverse;
+        }
+
+        .temp {
+            position: relative;
+
+            font-size: 5rem;
+            line-height: 40px;
+
+            &::after {
+                content: '\00b0';
+                position: absolute;
+                top: -10px;
+
+                font-size: 2.2rem;
+                line-height: 1;
+            }
+        }
+    }
+
+    footer {
+        a {
+            display: inline-block;
+            width: 79px;
+            padding: 11px 0;
+
+            font-size: 4.075rem;
+            line-height: 42px;
+            vertical-align: top;
+            text-align: center;
+            color: lighten($text, 7%);
+
+            @include transition(color);
+
+            &:not(.active):hover {
+                color: $brand-primary;
+            }
+
+            &.active {
+                color: $text-inverse;
+
+                background-color: $brand-secondary;
+            }
+        }
+
+        .add,
+        .list {
+            position: relative;
+
+            @include size(74px, 64px);
+
+            &::after,
+            &::before {
+                content: '';
+                position: absolute;
+
+                display: block;
+
+                @include transition();
+                @include bg-position('../img/sprite.png', 0, -54px);
+            }
+
+            &::after {
+                background-position-y: -81px;
+
+                @include opacity();
+            }
+
+            &:hover::after {
+                @include opacity(1);
+            }
+        }
+
+        .add {
+            &::after,
+            &::before {
+                top: 17px;
+                left: 27px;
+
+                @include size(27px);
+            }
+        }
+
+        .list {
+            &::after,
+            &::before {
+                top: 18px;
+                left: 18px;
+
+                @include size-and-position-x(43px, 27px, -27px);
+            }
+        }
+    }
+}

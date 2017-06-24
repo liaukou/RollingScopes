@@ -1,0 +1,152 @@
+.buttons {
+    width: 305px;
+    padding: 14px 10px 11px 12px;
+
+    @extend %clearfix;
+
+    .left {
+        float: left;
+        width: 216px;
+    }
+
+    .right {
+        float: right;
+        width: 51px;
+    }
+
+    input[type='text'] {
+        width: 216px;
+        padding: 13px 11px;
+
+        font-size: 2.038rem;
+        line-height: 21px;
+        letter-spacing: 1.5px;
+
+        border: 2px solid lighten($text, 10%);
+        border-radius: 12px;
+
+        &.valid {
+            color: $brand-primary;
+
+            border-color: $brand-primary;
+
+            @include placeholder($brand-primary);
+        }
+
+        &.invalid {
+            color: $brand-secondary;
+
+            border-color: $brand-secondary;
+
+            @include placeholder($brand-secondary);
+        }
+    }
+
+    input[type='range'] {
+        margin: 2px 0 0 2px;
+        overflow: hidden;
+
+        background: transparent;
+
+        -webkit-appearance: none;
+        @include track(8px, 5px, lighten($brand-tertiary, 25%), $brand-tertiary);
+        @include thumb(18px, $brand-tertiary, 8px);
+        @include size(213px, 70px);
+    }
+
+    input[type='checkbox'],
+    input[type='radio'] {
+        @extend %wcag-hidden;
+
+        &:focus + label::before {
+            box-shadow: 0 0 5px 1px $focus-color;
+        }
+
+        + label {
+            position: relative;
+
+            display: inline-block;
+            min-height: 51px;
+            padding-left: 51px;
+
+            vertical-align: top;
+        }
+    }
+
+    input[type='checkbox'] {
+        + label::before {
+            content: '';
+            position: absolute;
+
+            margin-left: -51px;
+
+            border: 2px solid $brand-secondary;
+            border-radius: 12px;
+
+            @include size(47px);
+        }
+
+        + label::after {
+            content: '';
+            position: absolute;
+            top: 17px;
+            left: 13px;
+
+            display: inline-block;
+
+            @include transition();
+            @include opacity();
+            @include bg-position('../img/sprite.png', -70px, -46px);
+            @include size(28px, 18px);
+        }
+
+        &:checked + label::after {
+            @include opacity(1);
+        }
+    }
+
+    input[type='radio'] {
+        + label {
+            min-height: 42px;
+            margin-top: 16px;
+            padding-left: 47px;
+
+            &::before {
+                content: '';
+
+                display: inline-block;
+                margin-left: -42px;
+
+                background-color: $text-inverse;
+                border: 2px solid $text;
+                border-radius: 50%;
+
+                @include transition(border-color);
+                @include size(38px);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 7px;
+                left: 12px;
+
+                background-color: $text;
+                border-radius: 50%;
+
+                @include transition(background-color);
+                @include size(28px);
+            }
+        }
+
+        &:checked {
+            + label::before {
+                border-color: $brand-primary;
+            }
+
+            + label::after {
+                background-color: $brand-primary;
+            }
+        }
+    }
+}

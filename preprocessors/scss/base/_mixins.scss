@@ -1,0 +1,134 @@
+@mixin transition($property: opacity, $duration: .2s, $timing-function:linear, $delay: 0s, $args...) {
+    -webkit-transition: $property $duration $timing-function $delay, $args;
+       -moz-transition: $property $duration $timing-function $delay, $args;
+            transition: $property $duration $timing-function $delay, $args;
+}
+
+@mixin bg-position($url, $x: 0, $y: 0, $repeat: no-repeat) {
+    background-image: url($url);
+    background-position-x: $x;
+    background-position-y: $y;
+    background-repeat: $repeat;
+}
+
+@mixin opacity($opacity: 0) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity = $opacity-ie);
+}
+
+@mixin absolute-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@mixin size($w, $h: $w) {
+    width: $w;
+    height: $h;
+}
+
+@mixin size-and-position-x($w, $h, $x) {
+    width: $w;
+    height: $h;
+
+    background-position-x: $x;
+}
+
+@mixin placeholder($color) {
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+
+    &::-moz-placeholder {
+        color: $color;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+// range cross-browser styles
+@mixin thumb($size, $color, $track-height) {
+    &::-webkit-slider-thumb {
+        width: $size;
+        height: $size;
+        margin-top: - ($size - $track-height) / 2;
+
+        background-color: $color;
+        border-radius: 50%;
+        cursor: pointer;
+
+        -webkit-appearance: none;
+    }
+
+    &::-moz-range-thumb {
+        width: $size;
+        height: $size;
+
+        background-color: $color;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    &::-ms-thumb {
+        width: $size;
+        height: $size;
+
+        background-color: $color;
+        border: 0;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+@mixin track($h, $radius, $bg, $progress) {
+    &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: $h;
+
+        background: $bg;
+        border-radius: $radius;
+        cursor: pointer;
+    }
+
+    &::-moz-range-progress {
+        height: $h;
+
+        background-color: $progress;
+        border-radius: $radius;
+        cursor: pointer;
+    }
+
+    &::-moz-range-track {
+        height: $h;
+
+        background: $bg;
+        border-radius: $radius;
+        cursor: pointer;
+    }
+
+    &::-ms-track {
+        width: 100%;
+        height: $h;
+
+        color: transparent;
+
+        background: transparent;
+        border-width: $radius 0;
+        border-color: transparent;
+        cursor: pointer;
+    }
+
+    &::-ms-fill-lower {
+        background: $progress;
+        border-radius: $radius;
+    }
+
+    &::-ms-fill-upper {
+        background: $bg;
+        border-radius: $radius;
+    }
+}
