@@ -1,0 +1,405 @@
+body {
+    min-width: 1200px;
+    margin-bottom: 200px;
+    padding-top: 80px;
+}
+
+html {
+    position: relative;
+
+    min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Fjalla One", sans-serif;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.7;
+}
+
+a {
+    transition: color 0.2s linear;
+}
+a:hover {
+    text-decoration: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.container {
+    width: 1170px;
+    max-width: none;
+}
+
+.navbar {
+    font-family: "Fjalla One", sans-serif;
+
+    border: 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    min-width: 1200px;
+    height: 200px;
+
+    background-color: #202628;
+}
+
+.media-body {
+    padding-left: 15px;
+}
+
+.subtitle {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 0;
+
+    font-size: 20px;
+    line-height: 1;
+    color: #e84c3d;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.btn {
+    padding: 12px 19px;
+
+    font-family: "Fjalla One", sans-serif;
+    text-transform: uppercase;
+
+    transition: background-color 0.2s linear;
+}
+
+button[type="submit"] {
+    position: relative;
+
+    width: auto;
+    margin-left: 7px;
+}
+button[type="submit"]::after {
+    content: "\e092";
+
+    display: inline-block;
+    margin-left: 10px;
+
+    font-size: 14px;
+    font-family: Glyphicons Halflings;
+    color: #ffffff;
+
+    transition: transform 0.2s linear;
+}
+button[type="submit"]:hover::after {
+    transform: translate(3px);
+}
+
+.form-control {
+    height: auto;
+    padding: 12px 19px;
+
+    box-shadow: none;
+}
+
+.form-inline .form-group {
+    display: inline-block;
+    width: 400px;
+    margin-bottom: 0;
+}
+.form-inline .form-group .form-control {
+    display: inline-block;
+    width: 100%;
+}
+
+header .navbar-brand {
+    font-size: 25px;
+}
+
+header .navbar-nav a {
+    font-size: 13px;
+
+    transition: background-color 0.2s linear;
+}
+
+header .slider {
+    position: relative;
+    background-color: #585762;
+}
+
+header .slider-images {
+    position: relative;
+
+    height: 560px;
+    overflow: hidden;
+}
+header .slider-images img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    height: 560px;
+
+    transform: translate3d(-50%, -50%, 0);
+}
+
+header .slider-content {
+    position: absolute;
+    bottom: 60px;
+
+    overflow: hidden;
+}
+header .slider-content h1,
+header .slider-content h2 {
+    font-size: 36px;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+header .slider-content a {
+    font-family: "Fjalla One", sans-serif;
+}
+header .slider-content .slider-heading h1:first-child::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+
+    display: inline;
+    width: 100%;
+    height: 2px;
+    margin-top: -2px;
+    margin-left: 15px;
+
+    background-color: #ffffff;
+}
+
+header .slider-navigation {
+    padding-left: 0;
+}
+header .slider-navigation li {
+    display: inline-block;
+}
+header .slider-navigation li a {
+    position: relative;
+
+    display: block;
+    width: 35px;
+    height: 70px;
+
+    font-size: 20px;
+    color: #333637;
+
+    background-color: #e84c3d;
+}
+header .slider-navigation li a .glyphicon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    transition: color 0.2s linear;
+}
+header .slider-navigation li a:hover .glyphicon {
+    color: #ffffff;
+}
+header .slider-navigation .back {
+    border-radius: 35px 0 0 35px;
+}
+header .slider-navigation .forward {
+    border-radius: 0 35px 35px 0;
+}
+
+.row-intro {
+    margin-bottom: 80px;
+    padding: 60px 0;
+
+    background-color: #eeeeee;
+}
+.row-intro .glyphicon {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    font-size: 30px;
+    color: #ffffff;
+
+    background-color: #e84c3d;
+    border-radius: 50%;
+}
+.row-intro .glyphicon::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+.row-intro .link-more::before {
+    content: "=>";
+
+    margin: 0 5px;
+}
+
+.row-info .container {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    padding: 30px;
+
+    color: #ffffff;
+
+    background-color: #e84c3d;
+    border-radius: 10px;
+}
+
+.row-info h3 {
+    color: inherit;
+}
+
+.row-info .media span {
+    display: block;
+    width: 70px;
+    height: 70px;
+    padding-top: 15px;
+
+    font-size: 34px;
+    text-align: center;
+    color: #ffffff;
+
+    background-color: #202628;
+    border-radius: 50%;
+}
+
+.row-last {
+    padding-bottom: 60px;
+}
+.row-last .media {
+    margin-top: 0;
+    padding: 20px 0;
+
+    border-top: 1px solid #eeeeee;
+}
+.row-last .media:last-of-type {
+    border-bottom: 1px solid #eeeeee;
+}
+.row-last .blog .link-more::after {
+    content: "=>";
+
+    margin-left: 5px;
+}
+.row-last form {
+    padding: 30px;
+
+    background-color: #eeeeee;
+    border-radius: 5px;
+}
+.row-last .contact-us .media-left span {
+    font-size: 24px;
+}
+.row-last .contact-us .media-body span {
+    font-weight: 700;
+    font-size: 16px;
+    color: #e84c3d;
+}
+.row-last .contact-us a {
+    display: block;
+
+    color: inherit;
+}
+.row-last .contact-us a:hover {
+    text-decoration: underline;
+}
+
+footer .container {
+    padding-top: 80px;
+}
+
+.bottom-navigation {
+    margin: 0 0 10px;
+    padding-left: 0;
+}
+.bottom-navigation li {
+    display: inline-block;
+    margin-right: 17px;
+}
+.bottom-navigation li:not(:last-child)::after {
+    content: "/";
+
+    margin-left: 17px;
+
+    font-size: 16px;
+    color: #555555;
+}
+.bottom-navigation li a {
+    font-size: 14px;
+    color: #ffffff;
+}
+.bottom-navigation li a:hover {
+    color: #e84c3d;
+}
+
+address span {
+    font-size: 14px;
+    color: #555555;
+}
+address span:first-child {
+    color: #e84c3d;
+}
+address span:not(:last-child)::after {
+    content: "/";
+
+    margin: 0 3px;
+
+    font-style: normal;
+}
+address span a {
+    color: inherit;
+
+    transition: 0.2s color linear;
+}
+address span a:hover {
+    color: #ffffff;
+}
+
+.social li {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.social a {
+    position: relative;
+    display: block;
+    width: 43px;
+    height: 43px;
+    margin-left: 10px;
+
+    background-color: #e84c3d;
+    border-radius: 50%;
+
+    transition: background-color 0.2s linear;
+}
+
+.social img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    height: 20px;
+
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.social a:hover {
+    background-color: #d82a1a;
+}
