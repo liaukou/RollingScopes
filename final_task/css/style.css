@@ -1,0 +1,13 @@
+@import "url('https://fonts.googleapis.com/css?family=Lato')";
+@import "url('https://fonts.googleapis.com/css?family=Ramaraja')";
+
+@import "main.css" screen;
+@import "header.css" screen;
+@import "banners.css" screen;
+@import "products.css" screen;
+@import "about.css" screen;
+@import "footer.css" screen;
+
+@import "helper_classes.css" screen;
+@import "elements.css" screen;
+@import "slider.css" screen;

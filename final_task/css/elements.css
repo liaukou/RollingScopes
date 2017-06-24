@@ -1,0 +1,189 @@
+.price {
+    position: relative;
+    background-color: #323232;
+    font-size: 25px;
+}
+
+.price::before {
+    content: '$';
+    padding-right: 2px;
+    font-size: 16px;
+}
+
+.price .cent {
+    position: relative;
+    top: -5px;
+    font-size: 13px;
+}
+
+.product-caption {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-caption > * {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.product-caption .title {
+    min-width: 95px;
+    color: inherit;
+    background-color: #05aecc;
+    text-transform: capitalize;
+}
+
+.product-caption a {
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.product-caption button {
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #ffffff;
+    border: 0;
+    font-size: 25px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.product-caption button:hover,
+.product-caption a:hover {
+    cursor: pointer;
+    color: #05aecc;
+    background-color: #ffffff;
+}
+
+.product-caption .add-to-wishlist {
+    background-color: #00a1be;
+}
+
+.product-caption .add-to-cart {
+    background-color: #f0626e;
+}
+
+.product-caption .add-to-wishlist:hover {
+    color: #00a1be;
+}
+
+.product-caption .add-to-cart:hover {
+    color: #f0626e;
+}
+
+.product-caption .add-to-wishlist:hover .tooltip,
+.product-caption .add-to-cart:hover .tooltip {
+    opacity: 1;
+}
+
+.tooltip {
+    position: absolute;
+    top: -29px;
+    width: 200%;
+    left: -50%;
+    padding: 5px;
+    color: #f0626e;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #f0626e;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    border: 6px solid transparent;
+    border-top: 6px solid #f0626e;
+    transform: translateX(-50%);
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    border: 6px solid transparent;
+    border-top: 6px solid #ffffff;
+    transform: translateX(-50%);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 1;
+    background-color: #ffffff;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: -1;
+}
+
+.dropdown-menu li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 225px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 25px;
+    border-bottom: 1px solid #cacaca;
+}
+
+.dropdown-menu li .info {
+    padding-left: 10px;
+}
+
+.dropdown-menu img {
+    width: 76px;
+    height: 76px;
+}
+
+.dropdown-menu h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #f0626e;
+    letter-spacing: 1px;
+}
+
+.dropdown-menu p {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    padding: 0;
+    line-height: 1;
+    font-size: 14px;
+}
+
+.dropdown-menu li a {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    background-color: #00a1be;
+}
+
+.dropdown-menu > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #f0626e;
+}
+
+.dropdown-menu > a:hover {
+    color: #00a1be;
+}
