@@ -1,0 +1,589 @@
+/* general styles */
+html {
+    font-size: 10px;
+    font-family: "PT Sans", sans-serif;
+    color: #787b80;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #293139;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-family: "Ubuntu", sans-serif;
+}
+
+h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+h3::after {
+    content: "";
+
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 20px;
+
+    background: linear-gradient(to right, rgba(233, 233, 233, 1), rgba(233, 233, 233, 0));
+}
+
+h3 > i {
+    padding-right: 12px;
+
+    font-size: 2.2rem;
+    font-family: FontAwesome;
+    color: #c6cbd1;
+}
+
+p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+}
+
+a {
+    font-size: 1.4rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding-top: 30px;
+
+    text-align: center;
+
+    background-color: #f5f5f5;
+}
+
+section:nth-child(even),
+footer {
+    background-color: #eeeeef;
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section ul > li {
+    display: block;
+    flex-basis: 100%;
+    margin-bottom: 30px;
+}
+
+footer {
+    padding: 15px 0;
+}
+
+.container {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.button,
+.more {
+    display: inline-block;
+    padding: 10px 18px;
+
+    color: #ffffff;
+
+    background-color: #50c3af;
+    border-radius: 30px;
+
+    transition: background-color 0.2s linear;
+}
+
+.button {
+    margin-top: 40px;
+    padding: 15px 45px;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.more:hover,
+.button:hover {
+    background-color: #d2d5da;
+}
+
+.more.contrast {
+    background-color: #d2d5da;
+}
+
+.more.contrast:hover {
+    background-color: #50c3af;
+}
+/* general styles end */
+
+
+/* header block */
+header {
+    padding: 20px 0;
+
+    text-align: center;
+    color: #ffffff;
+
+    background-image: url(../img/bg-425.jpg);
+    background-size: cover;
+}
+
+header nav {
+    position: fixed;
+    top: 0;
+    left: -200px;
+
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
+
+    font-family: "Open Sans", sans-serif;
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+    transition: left 0.2s linear;
+}
+
+.main-menu {
+    display: block;
+    width: 200px;
+    padding-top: 50px;
+
+    font-weight: bold;
+}
+
+.main-menu li {
+    display: block;
+    padding: 10px 0;
+}
+
+.main-menu a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    border-bottom: 2px solid transparent;
+
+    transition: border-color 0.2s linear;
+}
+
+.main-menu a:hover {
+    border-color: #ffffff;
+}
+
+#main-menu {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+
+    clip: rect(0 0 0 0);
+}
+
+label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+
+    font-size: 3rem;
+    color: #50c3af;
+
+    cursor: pointer;
+
+    transition: color 0.2s linear;
+}
+
+label:hover {
+    color: #ffffff;
+}
+
+#main-menu:checked ~ nav {
+    left: 0;
+}
+
+#main-menu:checked + label {
+    position: fixed;
+}
+
+header .title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header .title h1 {
+    flex-basis: 100%;
+
+    text-align: center;
+    color: inherit;
+    text-transform: uppercase;
+}
+
+header .title p {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 500px;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+header .title p::before,
+header .title p::after {
+    content: "";
+
+    flex-grow: 1;
+    height: 2px;
+    margin: 0 15px;
+
+    background-color: rgba(170, 170, 170, 0.8);
+}
+/* header block end */
+
+
+.intro li {
+    text-align: center;
+}
+
+.intro i {
+    display: block;
+
+    font-size: 3rem;
+    color: #50c3af;
+}
+
+.intro h4 {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+
+    font-size: 1.6rem;
+    text-transform: uppercase;
+
+    border-bottom: 2px solid #e2e3e4;
+}
+
+
+.about li {
+    flex-basis: 100%;
+}
+
+.about p {
+    margin-bottom: 35px;
+}
+
+.about img {
+    width: 260px;
+}
+
+
+.single-about .container {
+    padding-bottom: 50px;
+}
+
+
+.news a {
+    color: #50c3af;
+
+    border-bottom: 1px solid transparent;
+
+    transition: border-color 0.2s linear;
+}
+
+.news a::after {
+    content: ">";
+
+    padding-left: 7px;
+}
+
+.news a:hover {
+    border-color: #50c3af;
+}
+
+.news img {
+    width: 180px;
+}
+
+
+.info li {
+    flex-basis: 100%;
+}
+
+
+.single-news .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.single-news article {
+    flex-basis: 100%;
+}
+
+.single-news img {
+    width: 300px;
+}
+
+
+section.partners {
+    text-align: center;
+
+    background-color: #50c3af;
+}
+
+.partners h3 {
+    display: inline-block;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+
+    color: #ffffff;
+
+    border-bottom: 2px solid rgba(245, 245, 245, 0.5);
+}
+
+.partners h3 > i {
+    color: rgba(245, 245, 245, 0.5);
+}
+
+.partners h3::after {
+    display: none;
+}
+
+.partners ul {
+    justify-content: center;
+}
+
+.partners li {
+    flex-basis: 50%;
+}
+
+.partners a {
+    border-bottom: 2px solid transparent;
+
+    transition: border-color 0.2s linear;
+}
+
+.partners a:hover {
+    border-color: rgba(245, 245, 245, 0.5);
+}
+
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+
+    text-align: center;
+}
+
+footer .copyright {
+    flex-basis: 100%;
+}
+
+footer span,
+footer a {
+    color: #aaacaf;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer li {
+    display: block;
+}
+
+footer li > a::before {
+    padding-left: 15px;
+
+    font-size: 2rem;
+    font-family: FontAwesome;
+
+    transition: color 0.2s linear;
+}
+
+footer li:first-child > a::before {
+    padding-left: 0;
+}
+
+footer .google::before {
+    content: "\f0d5";
+}
+
+footer .facebook::before {
+    content: "\f09a";
+}
+
+footer .twitter::before {
+    content: "\f099";
+}
+
+footer .social a:hover::before {
+    color: #50c3af;
+}
+
+
+@media (min-width: 426px) {
+    header {
+        padding: 50px 0;
+
+        background-image: url(../img/bg-768.jpg);
+    }
+
+    .button {
+        margin-top: 80px;
+    }
+
+    header nav {
+        position: static;
+
+        width: auto;
+        height: auto;
+
+        background-color: transparent;
+    }
+
+    .main-menu {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    label {
+        display: none;
+    }
+}
+
+
+@media (min-width: 768px) {
+    section {
+        padding-top: 50px;
+
+        text-align: left;
+    }
+
+    section ul > li {
+        flex-basis: 33%;
+        margin-bottom: 50px;
+    }
+
+    h1 {
+        font-size: 5.1rem;
+    }
+
+    .container {
+        width: 600px;
+        padding: 0 5px;
+    }
+
+    header {
+        background-image: url(../img/bg-1024.jpg);
+    }
+
+    header .container {
+        width: 600px;
+    }
+
+    header .title {
+        width: 500px;
+    }
+
+    .about li {
+        flex-basis: 45%;
+    }
+
+    .info li {
+        flex-basis: 45%;
+    }
+
+    .single-news .container {
+        justify-content: space-between;
+    }
+
+    .single-news article {
+        flex-basis: 45%;
+    }
+
+    .partners li {
+        flex-basis: 25%;
+    }
+
+    footer .container {
+        text-align: left;
+    }
+
+    footer .copyright {
+        flex-basis: 70%;
+    }
+
+    footer ul {
+        flex-basis: 30%;
+        justify-content: flex-end;
+    }
+}
+
+
+@media (min-width: 992px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container {
+        width: 950px;
+    }
+
+    header {
+        background-image: url(../img/bg-1280.jpg);
+    }
+
+    header .container {
+        width: 800px;
+    }
+
+    header .title {
+        width: 600px;
+    }
+
+    .about img {
+        width: 450px;
+    }
+
+    .news img {
+        width: 260px;
+    }
+
+    .single-news img {
+        width: 450px;
+    }
+}
